@@ -15,7 +15,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.6;}
-
+ 
 /* LOADER */
 #loader{position:fixed;inset:0;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:32px;transition:opacity 0.6s ease;}
 #loader.hidden{opacity:0;pointer-events:none;}
@@ -26,10 +26,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .loader-status{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.5px;}
 .loader-stats{display:flex;gap:32px;font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);}
 .loader-stat-val{font-size:22px;font-family:'DM Serif Display',serif;color:rgba(255,255,255,0.8);display:block;text-align:center;}
-
+ 
 #app{display:none;}
 #app.visible{display:block;}
-
+ 
 /* HEADER */
 .site-header{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);background:rgba(250,248,244,0.92);}
 .header-inner{max-width:1280px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;}
@@ -39,7 +39,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .header-meta{display:flex;align-items:center;gap:12px;}
 .pill{font-family:'DM Mono',monospace;font-size:10px;padding:4px 10px;border-radius:20px;background:var(--paper2);color:var(--ink3);border:1px solid var(--border);text-transform:uppercase;}
 .pill.live{background:rgba(42,110,78,0.1);color:var(--accent3);border-color:rgba(42,110,78,0.2);}
-
+ 
 /* HERO */
 .hero{border-bottom:1px solid var(--border);background:var(--ink);color:var(--paper);padding:56px 32px 48px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,75,47,0.15) 0%,transparent 70%);pointer-events:none;}
@@ -54,13 +54,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .kpi-val{font-family:'DM Serif Display',serif;font-size:32px;color:var(--paper);line-height:1;margin-bottom:4px;}
 .kpi-val.accent{color:var(--accent);}
 .kpi-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.8px;text-transform:uppercase;color:rgba(250,248,244,0.4);}
-
+ 
 /* CONTENT */
 .content{max-width:1280px;margin:0 auto;padding:48px 32px;}
 .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);}
 .section-title{font-family:'DM Serif Display',serif;font-size:24px;letter-spacing:-0.3px;}
 .section-sub{font-size:13px;color:var(--ink3);}
-
+ 
 /* REC CARD */
 .rec-card{background:var(--ink);color:var(--paper);border-radius:16px;padding:40px;margin-bottom:48px;position:relative;overflow:hidden;}
 .rec-card::before{content:'';position:absolute;top:-60px;right:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(200,75,47,0.2) 0%,transparent 70%);}
@@ -72,7 +72,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .rec-metric{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 20px;}
 .rec-metric-val{font-family:'DM Serif Display',serif;font-size:24px;color:var(--paper);}
 .rec-metric-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(250,248,244,0.4);text-transform:uppercase;letter-spacing:0.5px;}
-
+ 
 /* TOP 3 PRODUCTS */
 .top3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
 @media(max-width:900px){.top3-grid{grid-template-columns:1fr;}}
@@ -99,7 +99,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .product-ai-brief{margin-top:16px;padding:12px 14px;border-radius:8px;font-size:13px;line-height:1.6;font-style:italic;position:relative;z-index:1;}
 .product-card.rank1 .product-ai-brief{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(250,248,244,0.7);}
 .product-card.rank2 .product-ai-brief,.product-card.rank3 .product-ai-brief{background:var(--paper2);border:1px solid var(--border);color:var(--ink3);}
-
+ 
 /* INSIGHTS STRIP */
 .insights-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
 @media(max-width:768px){.insights-strip{grid-template-columns:1fr;}}
@@ -107,7 +107,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .insight-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
 .insight-headline{font-weight:600;font-size:14px;margin-bottom:6px;line-height:1.4;}
 .insight-body{font-size:13px;color:var(--ink3);line-height:1.6;}
-
+ 
 /* HOW WE SCORED */
 .how-scored{background:var(--paper2);border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:48px;}
 .how-scored-title{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:6px;}
@@ -125,7 +125,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .formula-box.open{display:block;}
 .formula-line{font-family:'DM Mono',monospace;font-size:13px;color:rgba(250,248,244,0.8);margin-bottom:8px;}
 .formula-line span{color:var(--accent2);}
-
+ 
 /* OPP GRID */
 .opp-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:48px;}
 .opp-row{display:grid;grid-template-columns:28px 1fr 140px 80px 80px 80px 90px;align-items:center;gap:16px;padding:14px 20px;background:var(--paper);border:1px solid var(--border);border-radius:10px;transition:all 0.2s;cursor:pointer;}
@@ -144,7 +144,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .badge.critical{background:rgba(200,75,47,0.12);color:var(--accent);}
 .badge.high{background:rgba(232,160,32,0.12);color:#b07800;}
 .badge.medium{background:rgba(42,110,78,0.1);color:var(--accent3);}
-
+ 
 /* TWO COL */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;}
 @media(max-width:768px){.two-col{grid-template-columns:1fr;}}
@@ -166,7 +166,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .platform-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--paper2);border-radius:8px;}
 .platform-name{font-size:13px;font-weight:500;}
 .platform-stats{display:flex;gap:16px;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
-
+ 
 /* TREND */
 .trend-section{background:var(--paper);border:1px solid var(--border);border-top:3px solid var(--accent2);border-radius:12px;padding:36px;margin-bottom:100px;}
 .trend-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
@@ -180,7 +180,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .trend-card-body{font-size:13px;color:var(--ink3);line-height:1.6;}
 .trend-card-tag{display:inline-block;margin-top:10px;font-family:'DM Mono',monospace;font-size:10px;padding:3px 8px;background:rgba(232,160,32,0.12);color:#a07000;border-radius:4px;}
 .trend-disclaimer{margin-top:20px;font-size:12px;color:var(--ink3);font-style:italic;padding-top:16px;border-top:1px solid var(--border);}
-
+ 
 /* ── FULL-SCREEN MODAL ── */
 #modal-overlay{position:fixed;inset:0;background:rgba(15,14,12,0.7);z-index:500;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(6px);}
 #modal-overlay.open{opacity:1;pointer-events:all;}
@@ -212,7 +212,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .review-brand-tag{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;background:var(--paper3);border-radius:4px;color:var(--ink2);}
 .review-helpful{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);}
 .review-text{font-size:13px;color:var(--ink2);line-height:1.6;font-style:italic;}
-
+ 
 /* ── FLOATING CHAT BUBBLE ── */
 #chat-bubble{position:fixed;bottom:28px;right:28px;z-index:400;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
 .bubble-btn{width:56px;height:56px;background:var(--ink);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(15,14,12,0.3);transition:transform 0.2s,box-shadow 0.2s;position:relative;}
@@ -221,7 +221,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .bubble-label{position:absolute;right:68px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:500;padding:6px 12px;border-radius:8px;white-space:nowrap;opacity:0;transform:translateX(6px);transition:all 0.2s;pointer-events:none;}
 .bubble-btn:hover .bubble-label{opacity:1;transform:translateX(0);}
 .bubble-dot{position:absolute;top:0;right:0;width:14px;height:14px;background:#4ade80;border-radius:50%;border:2px solid var(--paper);}
-
+ 
 /* ── CHAT WINDOW ── */
 #chat-window{position:fixed;bottom:96px;right:28px;width:380px;background:var(--paper);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow2);z-index:400;display:none;flex-direction:column;overflow:hidden;max-height:520px;}
 #chat-window.open{display:flex;}
@@ -249,7 +249,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .chat-send{padding:8px 14px;background:var(--ink);color:var(--paper);border:none;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;transition:opacity 0.2s;}
 .chat-send:hover{opacity:0.85;}
 .chat-send:disabled{opacity:0.4;cursor:default;}
-
+ 
 footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--paper2);text-align:center;}
 .footer-inner{max-width:1280px;margin:0 auto;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
@@ -260,7 +260,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
 </style>
 </head>
 <body>
-
+ 
 <div id="loader">
   <div class="loader-brand">NPD <span>Intelligence</span></div>
   <div class="loader-stats">
@@ -271,7 +271,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
   <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
   <div class="loader-status" id="loader-status">Initialising data pipeline...</div>
 </div>
-
+ 
 <div id="app">
 <header class="site-header">
   <div class="header-inner">
@@ -285,7 +285,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
     </div>
   </div>
 </header>
-
+ 
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">Consumer Need-Gap Analysis · Indian D2C Market 2025</div>
@@ -299,9 +299,9 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
     </div>
   </div>
 </section>
-
+ 
 <div class="content">
-
+ 
   <!-- #1 REC -->
   <div class="rec-card fade-up" id="rec-card">
     <div class="rec-eyebrow">Primary Product Opportunity — AI Ranked</div>
@@ -309,7 +309,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
     <div class="rec-rationale" id="rec-rationale">Processing 6,000 reviews...</div>
     <div class="rec-metrics" id="rec-metrics"></div>
   </div>
-
+ 
   <!-- TOP 3 PRODUCTS -->
   <div class="section-header fade-up fade-up-1">
     <div class="section-title">Top 3 Products to Build</div>
@@ -320,7 +320,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
     <div class="product-card rank2"><div class="product-name">Loading...</div></div>
     <div class="product-card rank3"><div class="product-name">Loading...</div></div>
   </div>
-
+ 
   <!-- INSIGHTS -->
   <div class="section-header fade-up fade-up-1">
     <div class="section-title">What the Data Actually Shows</div>
@@ -331,7 +331,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
     <div class="insight-card"><div class="insight-tag">Loading</div><div class="insight-headline">Analysing...</div></div>
     <div class="insight-card"><div class="insight-tag">Loading</div><div class="insight-headline">Analysing...</div></div>
   </div>
-
+ 
   <!-- HOW WE SCORED -->
   <div class="how-scored fade-up fade-up-2">
     <div class="how-scored-title">How We Ranked Every Problem</div>
@@ -365,7 +365,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
       <div class="formula-line" style="margin-top:12px;color:rgba(250,248,244,0.5);font-size:11px;">Final score mapped to 50–100 range using power normalisation (exponent 0.6) to spread ranks meaningfully.</div>
     </div>
   </div>
-
+ 
   <!-- OPPORTUNITY RANKINGS -->
   <div class="section-header fade-up fade-up-2">
     <div class="section-title">Full Opportunity Rankings</div>
@@ -378,7 +378,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
       <div style="text-align:right">Helpful</div><div style="text-align:right">Priority</div>
     </div>
   </div>
-
+ 
   <!-- BRAND + CATEGORY -->
   <div class="two-col fade-up fade-up-3">
     <div class="card">
@@ -392,7 +392,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
       <div class="cat-grid" id="cat-grid"></div>
     </div>
   </div>
-
+ 
   <!-- PLATFORM + QUALITY -->
   <div class="two-col fade-up fade-up-3">
     <div class="card">
@@ -406,7 +406,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
       <div id="quality-stats"></div>
     </div>
   </div>
-
+ 
   <!-- TREND RADAR -->
   <div class="trend-section fade-up">
     <div class="trend-eyebrow">Analyst's Note — Early Signals</div>
@@ -434,11 +434,11 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
     </div>
     <div class="trend-disclaimer">⚠️ This section represents the analyst's independent market research, separate from the data analysis above. These are early-signal observations, not data-validated findings.</div>
   </div>
-
+ 
 </div>
 <footer><div class="footer-inner">NPD Intelligence · Mosaic Fellowship Challenge #8 · Built with live API data · 6,000 reviews · 15 Indian D2C brands · 2025</div></footer>
 </div><!-- /app -->
-
+ 
 <!-- FULL SCREEN MODAL -->
 <div id="modal-overlay" onclick="closeModal()"></div>
 <div id="modal">
@@ -472,7 +472,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
     </div>
   </div>
 </div>
-
+ 
 <!-- FLOATING CHAT -->
 <div id="chat-bubble">
   <div id="chat-window">
@@ -506,14 +506,33 @@ footer{border-top:1px solid var(--border);padding:24px 32px;background:var(--pap
     <span class="bubble-dot"></span>
   </button>
 </div>
-
+ 
 <script>
 const GEMINI_KEY = 'AIzaSyCnbJzeZJm9y6T_2LzFqOHWON-Ks1zBfvg';
 const API_BASE = 'https://mosaicfellowship.in/api/data/npd/reviews';
-
+const briefCache = {}; // key -> brief text, prevents duplicate API calls
+let geminiLastCall = 0; // timestamp of last Gemini call
+ 
+async function geminiCall(prompt) {
+  // Enforce 5 second gap between calls to respect free tier rate limit
+  const now = Date.now();
+  const wait = Math.max(0, 5000 - (now - geminiLastCall));
+  if (wait > 0) await new Promise(r => setTimeout(r, wait));
+  geminiLastCall = Date.now();
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`,
+    { method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ contents:[{parts:[{text:prompt}]}], generationConfig:{maxOutputTokens:300} })
+    }
+  );
+  if (!res.ok) throw new Error(`Gemini ${res.status}`);
+  const data = await res.json();
+  return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+}
+ 
 let allReviews=[], needsMap={}, brandsMap={}, categoriesMap={}, platformsMap={};
 let computedScores=[], dataContext='', chatOpen=false, chatHistory=[];
-
+ 
 const NEED_LABELS={
   personalization_demand:'Personalisation Demand',allergen_labeling:'Allergen Labelling',
   skin_type_mismatch:'Skin Type Mismatch',result_tracking:'Result Tracking',
@@ -524,7 +543,7 @@ const NEED_LABELS={
   subscription_flexibility:'Subscription Flexibility',price_value_mismatch:'Price–Value Mismatch',
   dosage_confusion:'Dosage Confusion'
 };
-
+ 
 const PRODUCT_NAMES={
   ingredient_transparency:'Transparent Formula Skincare',vegan_certification:'Certified Vegan Wellness Range',
   subscription_flexibility:'Flexible Wellness Subscription',result_tracking:'Progress-Tracking Supplement Kit',
@@ -535,7 +554,7 @@ const PRODUCT_NAMES={
   packaging_sustainability:'Refillable Zero-Waste Beauty',fragrance_sensitivity:'Fragrance-Free Sensitive Range',
   travel_size_demand:'Travel-Ready Mini Collection'
 };
-
+ 
 async function fetchAllData(){
   let page=1,totalPages=60;
   while(page<=totalPages){
@@ -560,7 +579,7 @@ async function fetchAllData(){
   buildContext();
   renderApp();
 }
-
+ 
 function processReviews(reviews){
   reviews.forEach(r=>{
     let needs=[];try{needs=JSON.parse(r.detected_unmet_needs||'[]');}catch(e){}
@@ -574,7 +593,7 @@ function processReviews(reviews){
     platformsMap[r.platform].reviews++;platformsMap[r.platform].needs+=needs.length;platformsMap[r.platform].rating+=r.rating;
   });
 }
-
+ 
 function computeScores(){
   const entries=Object.entries(needsMap).map(([key,data])=>{
     const count=data.reviews.length,avgRating=data.totalRating/count,avgHelpful=data.totalHelpful/count;
@@ -591,7 +610,7 @@ function computeScores(){
   entries.forEach(e=>{e.oppScore=Math.round(50+50*Math.pow((e.rawScore-minR)/range,0.6));});
   return entries;
 }
-
+ 
 function buildContext(){
   computedScores=computeScores();
   const topNeeds=computedScores.slice(0,10).map((n,i)=>
@@ -603,18 +622,18 @@ function buildContext(){
   const verified=allReviews.filter(r=>r.verified_purchase===1).length;
   const withNeeds=allReviews.filter(r=>{try{return JSON.parse(r.detected_unmet_needs||'[]').length>0;}catch(e){return false;}}).length;
   dataContext=`You are an expert product strategist analysing 6,000 competitor reviews from the Indian D2C health & wellness market (2025).
-
+ 
 DATASET: ${allReviews.length} reviews, ${Object.keys(brandsMap).length} brands, ${Math.round(verified/allReviews.length*100)}% verified purchases, ${Math.round(withNeeds/allReviews.length*100)}% have unmet needs.
-
+ 
 TOP UNMET NEEDS (scored: frequency 40% + severity 35% + validation 25%):
 ${topNeeds}
-
+ 
 BRAND HEAT MAP: ${topBrands}
 PLATFORM DATA: ${platStats}
-
+ 
 Answer concisely (under 100 words). Use specific numbers. Be direct and insightful like a sharp analyst briefing a CPO.`;
 }
-
+ 
 function renderApp(){
   const scores=computedScores;
   document.getElementById('kpi-reviews').textContent=allReviews.length.toLocaleString();
@@ -631,7 +650,7 @@ function renderApp(){
   const loader=document.getElementById('loader');
   loader.classList.add('hidden');setTimeout(()=>loader.style.display='none',700);
 }
-
+ 
 function renderRecommendation(top){
   if(!top)return;
   document.getElementById('rec-title').textContent=`Build a product that solves "${top.label}"`;
@@ -646,7 +665,7 @@ function renderRecommendation(top){
     <div class="rec-metric"><div class="rec-metric-val">${top.oppScore}</div><div class="rec-metric-label">Opportunity Score</div></div>
   `;
 }
-
+ 
 function renderTop3(scores){
   const grid=document.getElementById('top3-grid');
   grid.innerHTML='';
@@ -658,6 +677,8 @@ function renderTop3(scores){
     const productName=PRODUCT_NAMES[item.key]||item.label+' Product';
     const card=document.createElement('div');
     card.className=`product-card ${classes[i]}`;
+    // Show static fallback brief immediately — AI brief will update it when ready
+    const fallback=getFallbackBrief(item);
     card.innerHTML=`
       <div class="product-rank">${i+1}</div>
       <div class="product-tag">${rankLabels[i]}</div>
@@ -668,34 +689,41 @@ function renderTop3(scores){
         <span class="product-stat">${item.oppScore} score</span>
         <span class="product-stat">${item.avgRating.toFixed(1)}★ avg</span>
       </div>
-      <div class="product-ai-brief" id="brief-${i}">
-        <div class="ai-loading"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div><span>Generating brief...</span></div>
-      </div>
+      <div class="product-ai-brief" id="brief-${i}">${fallback}</div>
     `;
     card.addEventListener('click',()=>openModal(item));
     grid.appendChild(card);
-    generateCardBrief(item,i);
   });
+  // Queue all 3 briefs sequentially after a short delay (rate limit safe)
+  queueBriefs(scores.slice(0,3));
 }
-
-async function generateCardBrief(item,idx){
-  const brandCount={};item.data.reviews.forEach(r=>{brandCount[r.competitor_brand]=(brandCount[r.competitor_brand]||0)+1;});
-  const topBrands=Object.entries(brandCount).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([b,c])=>`${b}(${c})`).join(', ');
-  const prompt=`Product strategist brief for Indian D2C brand R&D team. Unmet need: ${item.label}. ${item.count} reviews, avg rating ${item.avgRating.toFixed(1)}/5, top competitors affected: ${topBrands}. Write exactly 2 sentences: what product to build and the one killer feature. No preamble.`;
-  try{
-    const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`,{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})
-    });
-    const data=await res.json();
-    const text=data.candidates?.[0]?.content?.parts?.[0]?.text||'';
-    if(text){const el=document.getElementById(`brief-${idx}`);if(el)el.textContent=text;}
-  }catch(e){
-    const el=document.getElementById(`brief-${idx}`);
-    if(el)el.textContent=`Launch a product directly addressing ${item.label.toLowerCase()} — with third-party verification and radical transparency as core differentiators.`;
+ 
+async function queueBriefs(items){
+  for(let i=0;i<items.length;i++){
+    const item=items[i];
+    // Check cache first — never call API twice for same need
+    if(briefCache[item.key]){
+      const el=document.getElementById(`brief-${i}`);
+      if(el) el.textContent=briefCache[item.key];
+      continue;
+    }
+    const brandCount={};item.data.reviews.forEach(r=>{brandCount[r.competitor_brand]=(brandCount[r.competitor_brand]||0)+1;});
+    const topBrands=Object.entries(brandCount).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([b,c])=>`${b}(${c})`).join(', ');
+    const prompt=`Indian D2C product strategist. Unmet need: ${item.label}. ${item.count} reviews, avg ${item.avgRating.toFixed(1)}/5, competitors: ${topBrands}. Write 2 sentences: what product to build + one killer feature. No preamble. Direct.`;
+    try{
+      const text=await geminiCall(prompt);
+      if(text){
+        briefCache[item.key]=text;
+        const el=document.getElementById(`brief-${i}`);
+        if(el) el.textContent=text;
+      }
+    }catch(e){
+      // Fallback already shown, just cache it
+      briefCache[item.key]=getFallbackBrief(item);
+    }
   }
 }
-
+ 
 function renderInsights(scores){
   const platEntries=Object.entries(platformsMap).map(([p,d])=>({p,avgRating:d.rating/d.reviews}));
   platEntries.sort((a,b)=>a.avgRating-b.avgRating);
@@ -728,14 +756,14 @@ function renderInsights(scores){
     </div>
   `;
 }
-
+ 
 function getColor(score){
   if(score>=85)return'#c84b2f';
   if(score>=70)return'#e8a020';
   if(score>=55)return'#2a6e4e';
   return'#7a7568';
 }
-
+ 
 function renderOppGrid(scores){
   const grid=document.getElementById('opp-grid');
   const header=grid.querySelector('.header-row');grid.innerHTML='';grid.appendChild(header);
@@ -758,7 +786,7 @@ function renderOppGrid(scores){
     grid.appendChild(row);
   });
 }
-
+ 
 function renderBrandHeat(){
   const sorted=Object.entries(brandsMap).sort((a,b)=>b[1]-a[1]);const max=sorted[0]?.[1]||1;
   document.getElementById('brand-list').innerHTML=sorted.map(([brand,count])=>`
@@ -766,20 +794,20 @@ function renderBrandHeat(){
     <div class="brand-bar-wrap"><div class="brand-bar" style="width:${Math.round((count/max)*100)}%"></div></div>
     <div class="brand-count">${count}</div></div>`).join('');
 }
-
+ 
 function renderCategories(){
   const sorted=Object.entries(categoriesMap).sort((a,b)=>b[1]-a[1]);
   document.getElementById('cat-grid').innerHTML=sorted.map(([cat,count])=>`
     <div class="cat-item"><div class="cat-name">${cat}</div><div class="cat-count">${count} mentions</div></div>`).join('');
 }
-
+ 
 function renderPlatforms(){
   const sorted=Object.entries(platformsMap).sort((a,b)=>b[1].needs-a[1].needs);
   document.getElementById('platform-list').innerHTML=sorted.map(([plat,d])=>`
     <div class="platform-row"><div class="platform-name">${plat}</div>
     <div class="platform-stats"><span>${d.reviews.toLocaleString()} reviews</span><span>${d.needs} needs</span><span>${(d.rating/d.reviews).toFixed(1)}★ avg</span></div></div>`).join('');
 }
-
+ 
 function renderQuality(){
   const verified=allReviews.filter(r=>r.verified_purchase===1).length;
   const withNeeds=allReviews.filter(r=>{try{return JSON.parse(r.detected_unmet_needs||'[]').length>0;}catch(e){return false;}}).length;
@@ -803,7 +831,7 @@ function renderQuality(){
       </div>
     </div>`;
 }
-
+ 
 // ── FULL SCREEN MODAL ──
 function openModal(item){
   document.getElementById('m-title').textContent=item.label;
@@ -826,82 +854,85 @@ function openModal(item){
       <span class="review-helpful">${r.helpful_votes} helpful</span></div>
       <div class="review-text">"${r.review_text}"</div>
     </div>`).join('');
-  document.getElementById('m-brief').innerHTML='<div class="ai-loading"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div><span>Generating with Gemini...</span></div>';
+  // Show cached brief instantly if available, otherwise show fallback + fetch
+  const cached = briefCache[item.key];
+  document.getElementById('m-brief').textContent = cached || getFallbackBrief(item);
   document.getElementById('modal-overlay').classList.add('open');
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
-  generateModalBrief(item,sortedBrands);
+  // Only call API if not cached yet
+  if(!cached) generateModalBrief(item);
 }
-
-async function generateModalBrief(item,topBrands){
-  const bl=topBrands.slice(0,4).map(([b,c])=>`${b}(${c})`).join(', ');
-  const samples=item.data.reviews.filter(r=>r.review_text.length>20)
+ 
+async function generateModalBrief(item){
+  if(briefCache[item.key]){
+    document.getElementById('m-brief').textContent=briefCache[item.key];
+    return;
+  }
+  const brandCount={};item.data.reviews.forEach(r=>{brandCount[r.competitor_brand]=(brandCount[r.competitor_brand]||0)+1;});
+  const bl=Object.entries(brandCount).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([b,c])=>`${b}(${c})`).join(', ');
+  const samples=item.data.reviews.filter(r=>r.review_text&&r.review_text.length>20)
     .sort((a,b)=>b.helpful_votes-a.helpful_votes).slice(0,3).map(r=>`"${r.review_text}"`).join('; ');
-  const prompt=`Senior product strategist briefing R&D team at an Indian D2C health & wellness brand.
-Unmet need: ${item.label} · Score: ${item.oppScore}/100 · ${item.count} mentions · Avg rating: ${item.avgRating.toFixed(1)}/5
-Most affected brands: ${bl}
-Sample complaints: ${samples}
-Write a sharp 3-sentence product brief: (1) what to build + key differentiator, (2) why this gap exists now in India, (3) one specific feature that directly solves the top complaint. Be specific, no preamble.`;
+  const prompt=`Senior product strategist briefing R&D team at Indian D2C brand. Unmet need: ${item.label} · Score: ${item.oppScore}/100 · ${item.count} mentions · Avg rating: ${item.avgRating.toFixed(1)}/5. Top brands affected: ${bl}. Sample complaints: ${samples}. Write 3 sharp sentences: (1) what to build + key differentiator, (2) why this gap exists in India now, (3) one specific feature solving the top complaint. No preamble.`;
   try{
-    const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`,{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})
-    });
-    const data=await res.json();
-    const text=data.candidates?.[0]?.content?.parts?.[0]?.text||'';
-    document.getElementById('m-brief').textContent=text||getFallbackBrief(item);
-  }catch(e){document.getElementById('m-brief').textContent=getFallbackBrief(item);}
+    const text=await geminiCall(prompt);
+    const final=text||getFallbackBrief(item);
+    briefCache[item.key]=final;
+    document.getElementById('m-brief').textContent=final;
+  }catch(e){
+    briefCache[item.key]=getFallbackBrief(item);
+    document.getElementById('m-brief').textContent=getFallbackBrief(item);
+  }
 }
-
+ 
 function getFallbackBrief(item){
   return`Launch a ${item.label.toLowerCase()}-focused product with radical transparency as its core differentiator — clear ingredient lists, third-party verification, and plain-language efficacy claims. The gap exists because Indian D2C brands have prioritised marketing over product trust as the category scaled rapidly. Lead with a dedicated QR-code ingredient scanner feature that lets customers verify every compound before purchase.`;
 }
-
+ 
 function closeModal(){
   document.getElementById('modal-overlay').classList.remove('open');
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow='';
 }
-
+ 
 function toggleFormula(){
   document.getElementById('formula-box').classList.toggle('open');
 }
-
+ 
 // ── CHAT ──
 function toggleChat(){
   chatOpen=!chatOpen;
   document.getElementById('chat-window').classList.toggle('open',chatOpen);
   if(chatOpen)setTimeout(()=>document.getElementById('chat-in').focus(),100);
 }
-
+ 
 function chatKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}}
 function useSug(btn){document.getElementById('chat-in').value=btn.textContent;document.getElementById('chat-sugs').style.display='none';sendChat();}
-
+ 
 async function sendChat(){
   const input=document.getElementById('chat-in');
   const msg=input.value.trim();if(!msg)return;
   input.value='';
-  addMsg('user',msg);chatHistory.push({role:'user',parts:[{text:msg}]});
+  addMsg('user',msg);
+  chatHistory.push({role:'user',parts:[{text:msg}]});
   const btn=document.getElementById('chat-send-btn');btn.disabled=true;
-  addMsg('ai','...','typing-ai');
+  addMsg('ai','Thinking...','typing-ai');
   try{
-    const contents=[
-      {role:'user',parts:[{text:dataContext}]},
-      {role:'model',parts:[{text:'Understood. I have the full dataset context. Ready to answer questions about the 6,000 reviews.'}]},
-      ...chatHistory
-    ];
-    const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`,{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({contents,generationConfig:{maxOutputTokens:200}})
-    });
-    const data=await res.json();
-    const reply=data.candidates?.[0]?.content?.parts?.[0]?.text||"I couldn't process that. Try again.";
-    removeTyping();addMsg('ai',reply);
-    chatHistory.push({role:'model',parts:[{text:reply}]});
-  }catch(e){removeTyping();addMsg('ai','Connection issue. Check your internet and try again.');}
+    const fullPrompt=dataContext+'\n\nConversation so far:\n'+
+      chatHistory.slice(0,-1).map(m=>m.role+': '+m.parts[0].text).join('\n')+
+      '\n\nUser: '+msg+'\n\nAnswer in under 80 words. Use specific numbers from the data. Be direct.';
+    const reply=await geminiCall(fullPrompt);
+    removeTyping();
+    const final=reply||"I couldn't process that — try rephrasing.";
+    addMsg('ai',final);
+    chatHistory.push({role:'model',parts:[{text:final}]});
+  }catch(e){
+    removeTyping();
+    addMsg('ai','Rate limit hit — please wait a few seconds and try again.');
+  }
   btn.disabled=false;document.getElementById('chat-in').focus();
 }
-
+ 
 function addMsg(role,text,id=''){
   const msgs=document.getElementById('chat-msgs');
   const div=document.createElement('div');div.className=`msg ${role}`;if(id)div.id=id;
@@ -909,9 +940,9 @@ function addMsg(role,text,id=''){
   div.innerHTML=`<div class="msg-bubble">${text}</div><div class="msg-time">${time}</div>`;
   msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
 }
-
+ 
 function removeTyping(){const t=document.getElementById('typing-ai');if(t)t.remove();}
-
+ 
 fetchAllData();
 </script>
 </body>
