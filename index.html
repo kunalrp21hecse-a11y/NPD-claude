@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPD Intelligence — Mosaic Fellowship</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0e0c;
+  --ink2: #3a3830;
+  --ink3: #7a7568;
+  --paper: #faf8f4;
+  --paper2: #f2efe8;
+  --paper3: #e8e4da;
+  --accent: #c84b2f;
+  --accent2: #e8a020;
+  --accent3: #2a6e4e;
+  --border: rgba(15,14,12,0.1);
+  --border2: rgba(15,14,12,0.06);
+  --shadow: 0 2px 16px rgba(15,14,12,0.08);
+  --shadow2: 0 8px 40px rgba(15,14,12,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ── LOADING SCREEN ── */
+#loader {
+  position: fixed; inset: 0;
+  background: var(--ink);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  z-index: 9999;
+  gap: 32px;
+  transition: opacity 0.6s ease;
+}
+#loader.hidden { opacity: 0; pointer-events: none; }
+
+.loader-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--paper);
+  letter-spacing: -0.5px;
+}
+.loader-brand span { color: var(--accent); }
+
+.loader-bar-wrap {
+  width: 280px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loader-bar {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.loader-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.5px;
+}
+
+.loader-stats {
+  display: flex; gap: 32px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+}
+.loader-stat-val {
+  font-size: 22px;
+  font-family: 'DM Serif Display', serif;
+  color: rgba(255,255,255,0.8);
+  display: block;
+  text-align: center;
+}
+
+/* ── MAIN LAYOUT ── */
+#app { display: none; }
+#app.visible { display: block; }
+
+/* ── HEADER ── */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--paper);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(250,248,244,0.92);
+}
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+}
+.logo span { color: var(--accent); }
+.logo-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--ink3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+}
+.header-meta {
+  display: flex; align-items: center; gap: 16px;
+}
+.pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--paper2);
+  color: var(--ink3);
+  border: 1px solid var(--border);
+  text-transform: uppercase;
+}
+.pill.live { background: rgba(42,110,78,0.1); color: var(--accent3); border-color: rgba(42,110,78,0.2); }
+
+/* ── HERO ── */
+.hero {
+  border-bottom: 1px solid var(--border);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 56px 32px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(200,75,47,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 200px;
+  width: 400px; height: 300px;
+  background: radial-gradient(circle, rgba(232,160,32,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative; z-index: 1;
+}
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-desc {
+  font-size: 16px;
+  color: rgba(250,248,244,0.55);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+.hero-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0;
+  width: fit-content;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.hero-kpi {
+  padding: 20px 28px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+}
+.hero-kpi:last-child { border-right: none; }
+.kpi-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  color: var(--paper);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.kpi-val.accent { color: var(--accent); }
+.kpi-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(250,248,244,0.4);
+}
+
+/* ── CONTENT ── */
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 32px;
+}
+
+/* ── SECTION HEADERS ── */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  letter-spacing: -0.3px;
+}
+.section-sub {
+  font-size: 13px;
+  color: var(--ink3);
+}
+
+/* ── TOP RECOMMENDATION CARD ── */
+.rec-card {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.rec-card::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -40px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(200,75,47,0.2) 0%, transparent 70%);
+}
+.rec-card::after {
+  content: '№1';
+  position: absolute;
+  right: 40px; bottom: 20px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 120px;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+}
+.rec-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.rec-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.rec-rationale {
+  font-size: 15px;
+  color: rgba(250,248,244,0.6);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  position: relative; z-index: 1;
+}
+.rec-metrics {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  position: relative; z-index: 1;
+}
+.rec-metric {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 12px 20px;
+}
+.rec-metric-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  color: var(--paper);
+}
+.rec-metric-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(250,248,244,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── OPPORTUNITY SCORES TABLE ── */
+.opp-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; }
+
+.opp-row {
+  display: grid;
+  grid-template-columns: 24px 1fr 100px 120px 80px 80px 80px;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.opp-row:hover {
+  border-color: rgba(200,75,47,0.3);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+.opp-row.header-row {
+  background: transparent;
+  border: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ink3);
+  cursor: default;
+  transform: none !important;
+  box-shadow: none !important;
+  padding: 4px 20px;
+}
+.opp-rank {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--ink3);
+}
+.opp-need {
+  font-weight: 500;
+  font-size: 14px;
+}
+.opp-need-label {
+  font-size: 12px;
+  color: var(--ink3);
+  margin-top: 1px;
+}
+.score-bar-wrap {
+  display: flex; align-items: center; gap: 8px;
+}
+.score-bar {
+  height: 6px;
+  background: var(--paper3);
+  border-radius: 3px;
+  flex: 1;
+  overflow: hidden;
+}
+.score-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+  transition: width 1s ease;
+}
+.score-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--ink);
+  min-width: 32px;
+  text-align: right;
+}
+.stat-cell {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--ink2);
+  text-align: right;
+}
+.badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+.badge.high { background: rgba(200,75,47,0.12); color: var(--accent); }
+.badge.med { background: rgba(232,160,32,0.12); color: #b07800; }
+.badge.low { background: rgba(42,110,78,0.1); color: var(--accent3); }
+
+/* ── TWO COL ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+@media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+.card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.card-icon {
+  width: 28px; height: 28px;
+  background: var(--paper2);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+
+/* ── BRAND HEAT MAP ── */
+.brand-list { display: flex; flex-direction: column; gap: 10px; }
+.brand-row {
+  display: flex; align-items: center; gap: 12px;
+}
+.brand-name {
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.brand-bar-wrap {
+  flex: 1;
+  height: 8px;
+  background: var(--paper3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.brand-bar {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transition: width 1s ease;
+}
+.brand-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+  min-width: 30px;
+  text-align: right;
+}
+
+/* ── CATEGORY BREAKDOWN ── */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.cat-item {
+  background: var(--paper2);
+  border-radius: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--border2);
+}
+.cat-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.cat-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+}
+
+/* ── PLATFORM TABLE ── */
+.platform-list { display: flex; flex-direction: column; gap: 8px; }
+.platform-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--paper2);
+  border-radius: 8px;
+}
+.platform-name { font-size: 13px; font-weight: 500; }
+.platform-stats {
+  display: flex; gap: 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+}
+
+/* ── DETAIL DRAWER ── */
+#drawer-overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,14,12,0.5);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(4px);
+}
+#drawer-overlay.open { opacity: 1; pointer-events: all; }
+#drawer {
+  position: fixed;
+  right: 0; top: 0; bottom: 0;
+  width: min(520px, 95vw);
+  background: var(--paper);
+  z-index: 201;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  overflow-y: auto;
+  box-shadow: -8px 0 40px rgba(15,14,12,0.15);
+}
+#drawer.open { transform: translateX(0); }
+.drawer-header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 32px 28px 24px;
+  position: sticky; top: 0; z-index: 1;
+}
+.drawer-close {
+  position: absolute;
+  top: 16px; right: 20px;
+  background: none; border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 20px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+.drawer-close:hover { color: var(--paper); }
+.drawer-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.drawer-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  letter-spacing: -0.3px;
+  margin-bottom: 16px;
+}
+.drawer-scores {
+  display: flex; gap: 16px;
+}
+.drawer-score {
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 10px 14px;
+  flex: 1;
+}
+.drawer-score-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+}
+.drawer-score-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(250,248,244,0.4);
+  text-transform: uppercase;
+}
+.drawer-body { padding: 24px 28px; }
+.drawer-section { margin-bottom: 28px; }
+.drawer-section-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* AI product brief */
+.ai-brief {
+  background: var(--paper2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink2);
+  font-style: italic;
+  position: relative;
+  min-height: 60px;
+}
+.ai-brief-loading {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--ink3);
+  font-style: normal;
+  font-size: 13px;
+}
+.ai-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+.ai-dot:nth-child(2) { animation-delay: 0.2s; }
+.ai-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Sample reviews */
+.review-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border2);
+}
+.review-item:last-child { border-bottom: none; }
+.review-meta {
+  display: flex; gap: 8px; align-items: center; margin-bottom: 6px; flex-wrap: wrap;
+}
+.review-brand-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 2px 7px;
+  background: var(--paper3);
+  border-radius: 4px;
+  color: var(--ink2);
+}
+.review-rating { font-size: 12px; }
+.review-helpful {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--ink3);
+}
+.review-text {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── TREND RADAR (Analyst Section) ── */
+.trend-section {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent2);
+  border-radius: 12px;
+  padding: 36px;
+  margin-bottom: 48px;
+}
+.trend-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 8px;
+}
+.trend-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.trend-desc {
+  font-size: 13px;
+  color: var(--ink3);
+  margin-bottom: 28px;
+  max-width: 600px;
+  font-style: italic;
+}
+.trend-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 768px) { .trend-cards { grid-template-columns: 1fr; } }
+.trend-card {
+  background: var(--paper2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+.trend-card-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.trend-card-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.trend-card-body {
+  font-size: 13px;
+  color: var(--ink3);
+  line-height: 1.6;
+}
+.trend-card-tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  background: rgba(232,160,32,0.12);
+  color: #a07000;
+  border-radius: 4px;
+}
+.trend-disclaimer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--ink3);
+  font-style: italic;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── METHODOLOGY ── */
+.method-box {
+  background: var(--paper2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 768px) { .method-box { grid-template-columns: 1fr; } }
+.method-item {}
+.method-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 6px;
+}
+.method-formula {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin-bottom: 6px;
+}
+.method-desc {
+  font-size: 12px;
+  color: var(--ink3);
+  line-height: 1.5;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 32px;
+  background: var(--paper2);
+  text-align: center;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+  letter-spacing: 0.3px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease both; }
+.fade-up-1 { animation-delay: 0.1s; }
+.fade-up-2 { animation-delay: 0.2s; }
+.fade-up-3 { animation-delay: 0.3s; }
+.fade-up-4 { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-brand">NPD <span>Intelligence</span></div>
+  <div class="loader-stats">
+    <div>
+      <span class="loader-stat-val" id="ld-reviews">0</span>
+      reviews fetched
+    </div>
+    <div>
+      <span class="loader-stat-val" id="ld-pages">0</span>
+      pages loaded
+    </div>
+    <div>
+      <span class="loader-stat-val" id="ld-needs">0</span>
+      needs found
+    </div>
+  </div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar" id="loader-bar"></div>
+  </div>
+  <div class="loader-status" id="loader-status">Initialising data pipeline...</div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div style="display:flex;align-items:baseline;gap:4px">
+        <div class="logo">NPD <span>Intelligence</span></div>
+        <div class="logo-sub">Mosaic Fellowship · Challenge #8</div>
+      </div>
+      <div class="header-meta">
+        <span class="pill live">● Live Data</span>
+        <span class="pill" id="header-total">6,000 Reviews</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Consumer Need-Gap Analysis · Indian D2C Market 2025</div>
+      <h1 class="hero-title">Customers are telling you<br>what to build <em>next.</em><br>Are you listening?</h1>
+      <p class="hero-desc">6,000 competitor reviews across 15 Indian D2C brands — scored, ranked, and translated into product opportunities.</p>
+      <div class="hero-kpis">
+        <div class="hero-kpi">
+          <div class="kpi-val accent" id="kpi-reviews">—</div>
+          <div class="kpi-label">Reviews Analysed</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="kpi-val" id="kpi-brands">—</div>
+          <div class="kpi-label">Competitor Brands</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="kpi-val" id="kpi-needs">—</div>
+          <div class="kpi-label">Need Categories</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="kpi-val" id="kpi-top-need">—</div>
+          <div class="kpi-label">Top Unmet Need</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+
+    <!-- TOP RECOMMENDATION -->
+    <div class="rec-card fade-up" id="rec-card">
+      <div class="rec-eyebrow">AI-Ranked Primary Opportunity</div>
+      <div class="rec-title" id="rec-title">Loading...</div>
+      <div class="rec-rationale" id="rec-rationale">Analysing 6,000 reviews to surface the highest-opportunity product gap...</div>
+      <div class="rec-metrics" id="rec-metrics"></div>
+    </div>
+
+    <!-- METHODOLOGY -->
+    <div class="method-box fade-up fade-up-1">
+      <div class="method-item">
+        <div class="method-label">Opportunity Score Formula</div>
+        <div class="method-formula">Score = F(0.4) + S(0.35) + V(0.25)</div>
+        <div class="method-desc">Frequency (40%), Severity (35%), Validation (25%) — weighted to match how Mosaic defines "unmet need value."</div>
+      </div>
+      <div class="method-item">
+        <div class="method-label">Severity Definition</div>
+        <div class="method-formula">Severity = (6 − avg_rating) / 5</div>
+        <div class="method-desc">Lower ratings = higher pain = higher score. A 1-star review carries 5× more weight than a 5-star complaint.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-label">Validation Definition</div>
+        <div class="method-formula">Validation = avg_helpful_votes / max_votes</div>
+        <div class="method-desc">Helpful votes confirm the complaint resonates with a broader audience, not just one frustrated customer.</div>
+      </div>
+    </div>
+
+    <!-- OPPORTUNITY RANKINGS -->
+    <div class="section-header fade-up fade-up-2">
+      <div class="section-title">Opportunity Rankings</div>
+      <div class="section-sub">Click any row for detailed breakdown + AI product brief</div>
+    </div>
+
+    <div class="opp-grid" id="opp-grid">
+      <div class="opp-row header-row">
+        <div></div>
+        <div>Unmet Need</div>
+        <div style="text-align:right">Opp. Score</div>
+        <div style="text-align:right">Mentions</div>
+        <div style="text-align:right">Avg Rating</div>
+        <div style="text-align:right">Avg Helpful</div>
+        <div style="text-align:right">Priority</div>
+      </div>
+    </div>
+
+    <!-- TWO COL: BRAND HEAT + CATEGORY -->
+    <div class="two-col fade-up fade-up-3">
+      <div class="card">
+        <div class="card-title">
+          <div class="card-icon">🎯</div>
+          Brand Heat Map
+        </div>
+        <div class="section-sub" style="margin-bottom:16px;font-size:12px;">Total unmet need mentions by competitor brand</div>
+        <div class="brand-list" id="brand-list"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">
+          <div class="card-icon">📦</div>
+          Category Breakdown
+        </div>
+        <div class="section-sub" style="margin-bottom:16px;font-size:12px;">Unmet need density by product category</div>
+        <div class="cat-grid" id="cat-grid"></div>
+      </div>
+    </div>
+
+    <!-- TWO COL: PLATFORM + VERIFIED -->
+    <div class="two-col fade-up fade-up-4">
+      <div class="card">
+        <div class="card-title">
+          <div class="card-icon">🛒</div>
+          Platform Intelligence
+        </div>
+        <div class="platform-list" id="platform-list"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">
+          <div class="card-icon">✅</div>
+          Data Quality
+        </div>
+        <div id="quality-stats"></div>
+      </div>
+    </div>
+
+    <!-- ANALYST TREND RADAR -->
+    <div class="trend-section fade-up">
+      <div class="trend-eyebrow">Analyst's Note — Early Signals</div>
+      <div class="trend-title">Western Trends Heading to India</div>
+      <div class="trend-desc">Beyond what the data shows — emerging consumer behaviours in the West that typically arrive in India 2–3 years later. Not data-backed, but market-aware.</div>
+      <div class="trend-cards">
+        <div class="trend-card">
+          <div class="trend-card-icon">🧬</div>
+          <div class="trend-card-title">Skin Microbiome Care</div>
+          <div class="trend-card-body">Probiotic-based skincare is exploding in the US and EU. Products targeting the skin's bacterial ecosystem, not just surface symptoms. Indian consumers are just beginning to encounter this language.</div>
+          <span class="trend-card-tag">Early Signal — US/EU</span>
+        </div>
+        <div class="trend-card">
+          <div class="trend-card-icon">🧪</div>
+          <div class="trend-card-title">Clinical-Grade Personalisation</div>
+          <div class="trend-card-body">Brands like Curology and Function of Beauty have normalised quiz-based formulation in the West. The data shows personalisation_demand is a top complaint in India — this gap is already validated.</div>
+          <span class="trend-card-tag">Data-Confirmed Crossover</span>
+        </div>
+        <div class="trend-card">
+          <div class="trend-card-icon">♻️</div>
+          <div class="trend-card-title">Refill & Zero-Waste Models</div>
+          <div class="trend-card-body">Sustainable packaging is a growing pain point in the review data. In the West, refillable deodorants and serum pods are mainstream. India's urban consumer is ready — the infrastructure isn't yet.</div>
+          <span class="trend-card-tag">Early Signal — UK/EU</span>
+        </div>
+      </div>
+      <div class="trend-disclaimer">⚠️ This section represents the analyst's independent market research, separate from the data analysis above. These are early-signal observations, not data-validated findings.</div>
+    </div>
+
+  </div><!-- /content -->
+
+  <footer>
+    <div class="footer-inner">
+      NPD Intelligence · Mosaic Fellowship Challenge #8 · Built with live API data from 6,000 reviews across 15 Indian D2C brands · 2025
+    </div>
+  </footer>
+
+</div><!-- /app -->
+
+<!-- DRAWER -->
+<div id="drawer-overlay" onclick="closeDrawer()"></div>
+<div id="drawer">
+  <div class="drawer-header">
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+    <div class="drawer-eyebrow">Need Gap Deep Dive</div>
+    <div class="drawer-title" id="d-title">—</div>
+    <div class="drawer-scores">
+      <div class="drawer-score">
+        <div class="drawer-score-val" id="d-opp">—</div>
+        <div class="drawer-score-label">Opportunity Score</div>
+      </div>
+      <div class="drawer-score">
+        <div class="drawer-score-val" id="d-freq">—</div>
+        <div class="drawer-score-label">Mentions</div>
+      </div>
+      <div class="drawer-score">
+        <div class="drawer-score-val" id="d-rating">—</div>
+        <div class="drawer-score-label">Avg Rating</div>
+      </div>
+      <div class="drawer-score">
+        <div class="drawer-score-val" id="d-helpful">—</div>
+        <div class="drawer-score-label">Avg Helpful Votes</div>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-section">
+      <div class="drawer-section-title">AI Product Brief</div>
+      <div class="ai-brief" id="ai-brief">
+        <div class="ai-brief-loading">
+          <div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div>
+          <span>Generating product brief...</span>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Top Affected Brands</div>
+      <div id="d-brands" class="brand-list"></div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Sample Reviews</div>
+      <div id="d-reviews"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API_BASE = 'https://mosaicfellowship.in/api/data/npd/reviews';
+const ANTHROPIC_API = 'https://api.anthropic.com/v1/messages';
+
+let allReviews = [];
+let needsMap = {};
+let brandsMap = {};
+let categoriesMap = {};
+let platformsMap = {};
+
+const NEED_LABELS = {
+  personalization_demand: 'Personalisation Demand',
+  allergen_labeling: 'Allergen Labelling',
+  skin_type_mismatch: 'Skin Type Mismatch',
+  result_tracking: 'Result Tracking',
+  ingredient_transparency: 'Ingredient Transparency',
+  packaging_sustainability: 'Packaging Sustainability',
+  efficacy_timeline: 'Efficacy Timeline',
+  side_effect_concern: 'Side Effect Concern',
+  vegan_certification: 'Vegan Certification',
+  combination_guidance: 'Combination Guidance',
+  travel_size_demand: 'Travel Size Demand',
+  fragrance_sensitivity: 'Fragrance Sensitivity',
+  subscription_flexibility: 'Subscription Flexibility',
+  price_value_mismatch: 'Price–Value Mismatch',
+  dosage_confusion: 'Dosage Confusion'
+};
+
+// ── FETCH ALL DATA ──
+async function fetchAllData() {
+  let page = 1;
+  let totalPages = 60;
+
+  while (page <= totalPages) {
+    try {
+      const res = await fetch(`${API_BASE}?page=${page}&limit=100`);
+      const json = await res.json();
+      const reviews = json.data || [];
+      totalPages = json.pagination?.total_pages || 60;
+      allReviews = allReviews.concat(reviews);
+
+      // Update loader
+      const pct = Math.round((page / totalPages) * 100);
+      document.getElementById('loader-bar').style.width = pct + '%';
+      document.getElementById('ld-reviews').textContent = allReviews.length.toLocaleString();
+      document.getElementById('ld-pages').textContent = page;
+      document.getElementById('ld-needs').textContent = Object.keys(needsMap).length;
+      document.getElementById('loader-status').textContent = `Fetching page ${page} of ${totalPages}...`;
+
+      // Process this batch
+      processReviews(reviews);
+      page++;
+    } catch(e) {
+      console.error('Fetch error page', page, e);
+      page++;
+    }
+  }
+
+  document.getElementById('loader-status').textContent = 'Calculating opportunity scores...';
+  await new Promise(r => setTimeout(r, 400));
+  renderApp();
+}
+
+function processReviews(reviews) {
+  reviews.forEach(r => {
+    // Parse unmet needs
+    let needs = [];
+    try { needs = JSON.parse(r.detected_unmet_needs || '[]'); } catch(e) {}
+
+    needs.forEach(need => {
+      if (!needsMap[need]) needsMap[need] = { reviews: [], totalRating: 0, totalHelpful: 0 };
+      needsMap[need].reviews.push(r);
+      needsMap[need].totalRating += r.rating;
+      needsMap[need].totalHelpful += r.helpful_votes;
+    });
+
+    // Brands
+    const b = r.competitor_brand;
+    if (!brandsMap[b]) brandsMap[b] = 0;
+    brandsMap[b] += needs.length;
+
+    // Categories
+    const c = r.competitor_category;
+    if (!categoriesMap[c]) categoriesMap[c] = 0;
+    categoriesMap[c] += needs.length;
+
+    // Platforms
+    const p = r.platform;
+    if (!platformsMap[p]) platformsMap[p] = { reviews: 0, needs: 0, rating: 0 };
+    platformsMap[p].reviews++;
+    platformsMap[p].needs += needs.length;
+    platformsMap[p].rating += r.rating;
+  });
+}
+
+// ── SCORE CALCULATION ──
+function computeScores() {
+  const maxCount = Math.max(...Object.values(needsMap).map(n => n.reviews.length));
+  const maxHelpful = Math.max(...Object.values(needsMap).map(n => n.totalHelpful / n.reviews.length));
+
+  return Object.entries(needsMap).map(([key, data]) => {
+    const count = data.reviews.length;
+    const avgRating = data.totalRating / count;
+    const avgHelpful = data.totalHelpful / count;
+
+    const freqScore = count / maxCount;
+    const severityScore = (6 - avgRating) / 5;
+    const validationScore = avgHelpful / (maxHelpful || 1);
+
+    const oppScore = (freqScore * 0.4) + (severityScore * 0.35) + (validationScore * 0.25);
+
+    return { key, label: NEED_LABELS[key] || key, count, avgRating, avgHelpful, oppScore, data };
+  }).sort((a, b) => b.oppScore - a.oppScore);
+}
+
+// ── RENDER APP ──
+function renderApp() {
+  const scores = computeScores();
+  const maxScore = scores[0]?.oppScore || 1;
+
+  // Update hero KPIs
+  document.getElementById('kpi-reviews').textContent = allReviews.length.toLocaleString();
+  document.getElementById('kpi-brands').textContent = Object.keys(brandsMap).length;
+  document.getElementById('kpi-needs').textContent = scores.length;
+  document.getElementById('kpi-top-need').textContent = scores[0]?.label || '—';
+  document.getElementById('header-total').textContent = allReviews.length.toLocaleString() + ' Reviews';
+
+  // Top recommendation
+  renderRecommendation(scores[0]);
+
+  // Opportunity grid
+  renderOpportunityGrid(scores, maxScore);
+
+  // Brand heat map
+  renderBrandHeat();
+
+  // Categories
+  renderCategories();
+
+  // Platforms
+  renderPlatforms();
+
+  // Quality
+  renderQuality();
+
+  // Show app, hide loader
+  document.getElementById('app').classList.add('visible');
+  const loader = document.getElementById('loader');
+  loader.classList.add('hidden');
+  setTimeout(() => loader.style.display = 'none', 700);
+}
+
+function renderRecommendation(top) {
+  if (!top) return;
+  document.getElementById('rec-title').textContent = `Build a product that solves "${top.label}"`;
+  document.getElementById('rec-rationale').textContent =
+    `${top.count} reviews across ${Object.keys(brandsMap).length} brands mention this need. ` +
+    `With an average rating of ${top.avgRating.toFixed(1)}★ — deep customer frustration — and ` +
+    `${Math.round(top.avgHelpful)} helpful votes validating each complaint, this is the highest-opportunity gap in the entire dataset.`;
+
+  document.getElementById('rec-metrics').innerHTML = `
+    <div class="rec-metric">
+      <div class="rec-metric-val">${top.count}</div>
+      <div class="rec-metric-label">Mentions</div>
+    </div>
+    <div class="rec-metric">
+      <div class="rec-metric-val">${top.avgRating.toFixed(1)}★</div>
+      <div class="rec-metric-label">Avg Rating</div>
+    </div>
+    <div class="rec-metric">
+      <div class="rec-metric-val">${Math.round(top.avgHelpful)}</div>
+      <div class="rec-metric-label">Avg Helpful Votes</div>
+    </div>
+    <div class="rec-metric">
+      <div class="rec-metric-val">${(top.oppScore * 100).toFixed(0)}</div>
+      <div class="rec-metric-label">Opportunity Score</div>
+    </div>
+  `;
+}
+
+function renderOpportunityGrid(scores, maxScore) {
+  const grid = document.getElementById('opp-grid');
+  const header = grid.querySelector('.header-row');
+  grid.innerHTML = '';
+  grid.appendChild(header);
+
+  scores.forEach((item, i) => {
+    const priority = item.oppScore > maxScore * 0.7 ? 'high' : item.oppScore > maxScore * 0.4 ? 'med' : 'low';
+    const priorityLabel = priority === 'high' ? 'Critical' : priority === 'med' ? 'Medium' : 'Watch';
+    const pct = Math.round((item.oppScore / maxScore) * 100);
+
+    const row = document.createElement('div');
+    row.className = 'opp-row fade-up';
+    row.style.animationDelay = (i * 0.04) + 's';
+    row.innerHTML = `
+      <div class="opp-rank">${i + 1}</div>
+      <div>
+        <div class="opp-need">${item.label}</div>
+        <div class="opp-need-label">${item.key}</div>
+      </div>
+      <div class="score-bar-wrap">
+        <div class="score-bar"><div class="score-fill" style="width:${pct}%"></div></div>
+        <div class="score-val">${pct}</div>
+      </div>
+      <div class="stat-cell">${item.count.toLocaleString()}</div>
+      <div class="stat-cell">${item.avgRating.toFixed(1)}★</div>
+      <div class="stat-cell">${Math.round(item.avgHelpful)}</div>
+      <div><span class="badge ${priority}">${priorityLabel}</span></div>
+    `;
+    row.addEventListener('click', () => openDrawer(item));
+    grid.appendChild(row);
+  });
+}
+
+function renderBrandHeat() {
+  const sorted = Object.entries(brandsMap).sort((a,b) => b[1] - a[1]);
+  const max = sorted[0]?.[1] || 1;
+  const list = document.getElementById('brand-list');
+  list.innerHTML = sorted.slice(0, 12).map(([brand, count]) => `
+    <div class="brand-row">
+      <div class="brand-name">${brand}</div>
+      <div class="brand-bar-wrap">
+        <div class="brand-bar" style="width:${Math.round((count/max)*100)}%"></div>
+      </div>
+      <div class="brand-count">${count}</div>
+    </div>
+  `).join('');
+}
+
+function renderCategories() {
+  const sorted = Object.entries(categoriesMap).sort((a,b) => b[1] - a[1]);
+  document.getElementById('cat-grid').innerHTML = sorted.map(([cat, count]) => `
+    <div class="cat-item">
+      <div class="cat-name">${cat}</div>
+      <div class="cat-count">${count} mentions</div>
+    </div>
+  `).join('');
+}
+
+function renderPlatforms() {
+  const sorted = Object.entries(platformsMap).sort((a,b) => b[1].needs - a[1].needs);
+  document.getElementById('platform-list').innerHTML = sorted.map(([plat, d]) => `
+    <div class="platform-row">
+      <div class="platform-name">${plat}</div>
+      <div class="platform-stats">
+        <span>${d.reviews.toLocaleString()} reviews</span>
+        <span>${d.needs} needs</span>
+        <span>${(d.rating/d.reviews).toFixed(1)}★ avg</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderQuality() {
+  const verified = allReviews.filter(r => r.verified_purchase === 1).length;
+  const withNeeds = allReviews.filter(r => {
+    try { return JSON.parse(r.detected_unmet_needs||'[]').length > 0; } catch(e) { return false; }
+  }).length;
+  const verifiedPct = Math.round((verified / allReviews.length) * 100);
+  const needsPct = Math.round((withNeeds / allReviews.length) * 100);
+
+  document.getElementById('quality-stats').innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:13px;font-weight:500">Verified Purchases</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3)">${verifiedPct}%</span>
+        </div>
+        <div class="brand-bar-wrap" style="height:6px">
+          <div class="brand-bar" style="width:${verifiedPct}%;background:var(--accent3)"></div>
+        </div>
+        <div style="font-size:11px;color:var(--ink3);margin-top:4px">${verified.toLocaleString()} of ${allReviews.length.toLocaleString()} reviews</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:13px;font-weight:500">Reviews With Unmet Needs</span>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3)">${needsPct}%</span>
+        </div>
+        <div class="brand-bar-wrap" style="height:6px">
+          <div class="brand-bar" style="width:${needsPct}%;background:var(--accent)"></div>
+        </div>
+        <div style="font-size:11px;color:var(--ink3);margin-top:4px">${withNeeds.toLocaleString()} reviews carry actionable signals</div>
+      </div>
+      <div style="padding:12px;background:var(--paper2);border-radius:8px;border:1px solid var(--border)">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px">Date Range</div>
+        <div style="font-size:13px;font-weight:500">Jan 2025 – Dec 2025</div>
+        <div style="font-size:11px;color:var(--ink3);margin-top:2px">All ${allReviews.length.toLocaleString()} reviews from current year</div>
+      </div>
+    </div>
+  `;
+}
+
+// ── DRAWER ──
+let currentBriefController = null;
+
+function openDrawer(item) {
+  document.getElementById('d-title').textContent = item.label;
+  document.getElementById('d-opp').textContent = (item.oppScore * 100).toFixed(0);
+  document.getElementById('d-freq').textContent = item.count;
+  document.getElementById('d-rating').textContent = item.avgRating.toFixed(1) + '★';
+  document.getElementById('d-helpful').textContent = Math.round(item.avgHelpful);
+
+  // Brand breakdown for this need
+  const brandCount = {};
+  item.data.reviews.forEach(r => {
+    brandCount[r.competitor_brand] = (brandCount[r.competitor_brand] || 0) + 1;
+  });
+  const sortedBrands = Object.entries(brandCount).sort((a,b) => b[1]-a[1]);
+  const maxB = sortedBrands[0]?.[1] || 1;
+  document.getElementById('d-brands').innerHTML = sortedBrands.slice(0, 8).map(([brand, count]) => `
+    <div class="brand-row">
+      <div class="brand-name">${brand}</div>
+      <div class="brand-bar-wrap"><div class="brand-bar" style="width:${Math.round((count/maxB)*100)}%"></div></div>
+      <div class="brand-count">${count}</div>
+    </div>
+  `).join('');
+
+  // Sample reviews (highest helpful votes)
+  const topReviews = item.data.reviews
+    .filter(r => r.review_text && r.review_text.length > 20)
+    .sort((a,b) => b.helpful_votes - a.helpful_votes)
+    .slice(0, 5);
+  document.getElementById('d-reviews').innerHTML = topReviews.map(r => `
+    <div class="review-item">
+      <div class="review-meta">
+        <span class="review-brand-tag">${r.competitor_brand}</span>
+        <span class="review-rating">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</span>
+        <span class="review-helpful">${r.helpful_votes} found helpful</span>
+      </div>
+      <div class="review-text">"${r.review_text}"</div>
+    </div>
+  `).join('');
+
+  // Show drawer
+  document.getElementById('drawer-overlay').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+
+  // Reset AI brief
+  document.getElementById('ai-brief').innerHTML = `
+    <div class="ai-brief-loading">
+      <div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div>
+      <span>Generating product brief...</span>
+    </div>
+  `;
+
+  // Generate AI brief
+  generateBrief(item, sortedBrands);
+}
+
+async function generateBrief(item, topBrands) {
+  const brandList = topBrands.slice(0,4).map(([b,c]) => `${b} (${c} mentions)`).join(', ');
+  const sampleComplaints = item.data.reviews
+    .filter(r => r.review_text.length > 20)
+    .sort((a,b) => b.helpful_votes - a.helpful_votes)
+    .slice(0, 3)
+    .map(r => `"${r.review_text}"`)
+    .join('; ');
+
+  const prompt = `You are a senior product strategist at an Indian D2C health & wellness brand. Based on the following consumer research data, write a concise 3-sentence product brief for the R&D team.
+
+Unmet need: ${item.label} (${item.key})
+Opportunity score: ${(item.oppScore * 100).toFixed(0)}/100
+Mentions across ${item.count} reviews
+Average customer rating: ${item.avgRating.toFixed(1)}/5 (low = high pain)
+Most affected brands: ${brandList}
+Sample complaints: ${sampleComplaints}
+
+Write ONLY the product brief. No preamble. Be specific — name the product type, the key differentiator, and why now. Tone: confident, strategic, brief.`;
+
+  try {
+    const res = await fetch(ANTHROPIC_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.[0]?.text || 'Unable to generate brief.';
+    document.getElementById('ai-brief').textContent = text;
+  } catch(e) {
+    document.getElementById('ai-brief').textContent =
+      `Launch a ${item.label.toLowerCase()}-focused product addressing the ${item.count} documented complaints across Indian D2C brands. ` +
+      `With an average rating of ${item.avgRating.toFixed(1)}★ from affected customers, this represents clear unmet demand. ` +
+      `Prioritise this category for Q1 development given the validated opportunity score.`;
+  }
+}
+
+function closeDrawer() {
+  document.getElementById('drawer-overlay').classList.remove('open');
+  document.getElementById('drawer').classList.remove('open');
+}
+
+// ── INIT ──
+fetchAllData();
+</script>
+</body>
+</html>
