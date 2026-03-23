@@ -15,7 +15,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.6;}
-
+ 
 /* LOADER */
 #loader{position:fixed;inset:0;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:28px;transition:opacity 0.6s ease;}
 #loader.hidden{opacity:0;pointer-events:none;}
@@ -27,9 +27,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .ld-bar-wrap{width:300px;height:2px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
 .ld-bar{height:100%;background:var(--accent);width:0%;border-radius:2px;transition:width 0.25s ease;}
 .ld-status{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;}
-
+ 
 #app{display:none;}#app.visible{display:block;}
-
+ 
 /* HEADER */
 .hdr{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);background:rgba(250,248,244,0.92);}
 .hdr-in{max-width:1280px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;}
@@ -42,7 +42,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .compare-btn{font-size:13px;font-weight:500;padding:7px 14px;background:var(--paper2);color:var(--ink);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;}
 .compare-btn:hover{background:var(--paper3);}
 .compare-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-
+ 
 /* HERO */
 .hero{background:var(--ink);color:var(--paper);padding:56px 32px 48px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,75,47,0.15) 0%,transparent 70%);pointer-events:none;}
@@ -57,13 +57,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .kpi-val{font-family:'DM Serif Display',serif;font-size:30px;color:var(--paper);line-height:1;margin-bottom:3px;}
 .kpi-val.red{color:var(--accent);}
 .kpi-lab{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.8px;text-transform:uppercase;color:rgba(250,248,244,0.35);}
-
+ 
 /* CONTENT */
 .content{max-width:1280px;margin:0 auto;padding:48px 32px;}
 .sec-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--border);}
 .sec-title{font-family:'DM Serif Display',serif;font-size:24px;letter-spacing:-0.3px;}
 .sec-sub{font-size:13px;color:var(--ink3);}
-
+ 
 /* TOP 3 — consistent style */
 .top3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
 @media(max-width:900px){.top3{grid-template-columns:1fr;}}
@@ -81,13 +81,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .pcard-brief li::before{content:'→';color:var(--accent);font-weight:600;flex-shrink:0;margin-top:1px;}
 .pcard-brief li strong{color:var(--ink);font-weight:600;}
 .pcard-cta{margin-top:14px;font-size:12px;font-weight:500;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:0.5px;position:relative;z-index:1;}
-
+ 
 /* CAT FILTER */
 .cat-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
 .cf-btn{font-size:12px;padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--paper2);color:var(--ink2);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;font-weight:500;}
 .cf-btn:hover{border-color:var(--accent);color:var(--accent);}
 .cf-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-
+ 
 /* COMPARE (below rankings) */
 .compare-section{margin-top:24px;margin-bottom:48px;}
 .compare-toggle-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
@@ -100,7 +100,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .compare-banner strong{color:var(--accent);}
 .compare-banner button{font-size:12px;padding:6px 14px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .opp-row.compare-selected{border-color:var(--accent)!important;background:rgba(200,75,47,0.04)!important;}
-
+ 
 /* COMPARISON PANEL */
 #compare-panel{display:none;margin-bottom:48px;}
 #compare-panel.show{display:block;}
@@ -112,7 +112,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .compare-metric-label{color:var(--ink3);}
 .compare-metric-val{font-weight:600;font-family:'DM Mono',monospace;font-size:13px;}
 .compare-winner{color:var(--accent3);}
-
+ 
 /* INSIGHTS */
 .insights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
 @media(max-width:768px){.insights{grid-template-columns:1fr;}}
@@ -120,7 +120,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .ins-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
 .ins-head{font-weight:600;font-size:14px;margin-bottom:6px;line-height:1.4;}
 .ins-body{font-size:13px;color:var(--ink3);line-height:1.6;}
-
+ 
 /* HOW WE SCORED */
 .scored-box{background:var(--paper2);border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:48px;}
 .scored-title{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:6px;}
@@ -138,7 +138,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .formula-box.open{display:block;}
 .fline{font-family:'DM Mono',monospace;font-size:13px;color:rgba(250,248,244,0.8);margin-bottom:8px;}
 .fline span{color:var(--accent2);}
-
+ 
 /* OPP GRID */
 .opp-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:48px;}
 .opp-row{display:grid;grid-template-columns:28px 1fr 140px 80px 80px 80px 90px;align-items:center;gap:16px;padding:14px 20px;background:var(--paper);border:1px solid var(--border);border-radius:10px;transition:all 0.2s;cursor:pointer;}
@@ -157,7 +157,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .badge.critical{background:rgba(200,75,47,0.12);color:var(--accent);}
 .badge.high{background:rgba(232,160,32,0.12);color:#b07800;}
 .badge.medium{background:rgba(42,110,78,0.1);color:var(--accent3);}
-
+ 
 /* TWO COL */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;}
 @media(max-width:768px){.two-col{grid-template-columns:1fr;}}
@@ -176,7 +176,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .plat-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--paper2);border-radius:8px;margin-bottom:8px;}
 .plat-name{font-size:13px;font-weight:500;}
 .plat-stats{display:flex;gap:14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
-
+ 
 /* TREND */
 .trend-sec{background:var(--paper);border:1px solid var(--border);border-top:3px solid var(--accent2);border-radius:12px;padding:36px;margin-bottom:100px;}
 .trend-eye{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
@@ -190,7 +190,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .tcard-body{font-size:13px;color:var(--ink3);line-height:1.6;}
 .tcard-tag{display:inline-block;margin-top:10px;font-family:'DM Mono',monospace;font-size:10px;padding:3px 8px;background:rgba(232,160,32,0.12);color:#a07000;border-radius:4px;}
 .trend-disc{margin-top:20px;font-size:12px;color:var(--ink3);font-style:italic;padding-top:16px;border-top:1px solid var(--border);}
-
+ 
 /* MODAL */
 #mo{position:fixed;inset:0;z-index:500;display:none;}
 #mo.open{display:flex;}
@@ -218,7 +218,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .rev-brand{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;background:var(--paper3);border-radius:4px;color:var(--ink2);}
 .rev-helpful{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);}
 .rev-text{font-size:13px;color:var(--ink2);line-height:1.6;font-style:italic;}
-
+ 
 /* FLOATING CHAT */
 #chat-wrap{position:fixed;bottom:24px;right:24px;z-index:400;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
 #chat-win{width:360px;background:var(--paper);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow2);display:none;flex-direction:column;overflow:hidden;max-height:500px;}
@@ -251,7 +251,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .chat-fab:hover{transform:scale(1.08);}
 .chat-fab svg{width:22px;height:22px;fill:var(--paper);}
 .fab-dot{position:absolute;top:1px;right:1px;width:12px;height:12px;background:#4ade80;border-radius:50%;border:2px solid var(--paper);}
-
+ 
 footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--paper2);text-align:center;}
 .foot-in{max-width:1280px;margin:0 auto;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
@@ -260,7 +260,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
 </style>
 </head>
 <body>
-
+ 
 <div id="loader">
   <div class="ld-brand">NPD <span>Intelligence</span></div>
   <div class="ld-stats">
@@ -271,7 +271,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
   <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
   <div class="ld-status" id="ld-status">Initialising pipeline...</div>
 </div>
-
+ 
 <div id="app">
 <header class="hdr">
   <div class="hdr-in">
@@ -285,7 +285,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
     </div>
   </div>
 </header>
-
+ 
 <section class="hero">
   <div class="hero-in">
     <div class="hero-eye">Consumer Need-Gap Analysis · Indian D2C Market 2025</div>
@@ -299,9 +299,9 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
     </div>
   </div>
 </section>
-
+ 
 <div class="content">
-
+ 
   <!-- TOP 3 -->
   <div class="sec-hdr fu">
     <div class="sec-title">Top 3 Products to Build</div>
@@ -309,14 +309,14 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
   </div>
   <div class="cat-filter fu" id="cat-filter"></div>
   <div class="top3 fu fu1" id="top3"></div>
-
+ 
   <!-- INSIGHTS -->
   <div class="sec-hdr fu fu1">
     <div class="sec-title">What the Data Actually Shows</div>
     <div class="sec-sub">Non-obvious patterns beyond the rankings</div>
   </div>
   <div class="insights fu fu1" id="insights"></div>
-
+ 
   <!-- HOW WE SCORED -->
   <div class="scored-box fu fu2">
     <div class="scored-title">How We Ranked Every Problem</div>
@@ -350,7 +350,20 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
       <div class="fline" style="margin-top:12px;color:rgba(250,248,244,0.4);font-size:11px;">Final score mapped 50–100 using power normalisation (exponent 0.6) to create meaningful spread between ranks.</div>
     </div>
   </div>
-
+ 
+  <!-- COMPARE SECTION — above rankings -->
+  <div class="compare-section">
+    <div class="compare-toggle-row">
+      <button class="compare-inline-btn" id="compare-toggle" onclick="toggleCompareMode()">⇄ Compare Two Needs Head-to-Head</button>
+      <span class="compare-hint" id="compare-hint">Activate to select any two needs and compare them side by side</span>
+    </div>
+    <div class="compare-banner" id="compare-banner">
+      <span><strong id="compare-count">Select 2 needs</strong> from the rankings below</span>
+      <button onclick="runComparison()">Compare Now →</button>
+    </div>
+    <div id="compare-panel"></div>
+  </div>
+ 
   <!-- OPP RANKINGS -->
   <div class="sec-hdr fu fu2">
     <div class="sec-title">Full Opportunity Rankings</div>
@@ -363,20 +376,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
       <div style="text-align:right">Helpful</div><div style="text-align:right">Priority</div>
     </div>
   </div>
-
-  <!-- COMPARE SECTION — below rankings -->
-  <div class="compare-section">
-    <div class="compare-toggle-row">
-      <button class="compare-inline-btn" id="compare-toggle" onclick="toggleCompareMode()">⇄ Compare Two Needs Head-to-Head</button>
-      <span class="compare-hint" id="compare-hint">Select any two rows above to compare them</span>
-    </div>
-    <div class="compare-banner" id="compare-banner">
-      <span><strong id="compare-count">Select 2 needs</strong> from the rankings above</span>
-      <button onclick="runComparison()">Compare Now →</button>
-    </div>
-    <div id="compare-panel"></div>
-  </div>
-
+ 
   <!-- BRAND + CAT -->
   <div class="two-col fu fu3">
     <div class="card">
@@ -390,7 +390,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
       <div class="cat-g" id="cat-grid"></div>
     </div>
   </div>
-
+ 
   <!-- PLATFORM + QUALITY -->
   <div class="two-col fu fu3">
     <div class="card">
@@ -404,7 +404,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
       <div id="quality"></div>
     </div>
   </div>
-
+ 
   <!-- TREND RADAR -->
   <div class="trend-sec fu fu3">
     <div class="trend-eye">Analyst's Note — Early Signals</div>
@@ -417,11 +417,11 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
     </div>
     <div class="trend-disc">⚠️ This section represents the analyst's independent market research, separate from the data analysis above. These are early-signal observations, not data-validated findings.</div>
   </div>
-
+ 
 </div>
 <footer><div class="foot-in">NPD Intelligence · Mosaic Fellowship Challenge #8 · Live API data · 6,000 reviews · 15 Indian D2C brands · 2025</div></footer>
 </div>
-
+ 
 <!-- MODAL -->
 <div id="mo">
   <div id="mo-bg" onclick="closeMo()"></div>
@@ -457,12 +457,12 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
     </div>
   </div>
 </div>
-
+ 
 <!-- CHAT -->
 <div id="chat-wrap">
   <div id="chat-win">
     <div class="cw-hdr">
-      <div><div class="cw-title">Ask the Data</div><div class="cw-sub">Powered by OpenRouter · 6,000 reviews in context</div></div>
+      <div><div class="cw-title">Ask the Data</div><div class="cw-sub">Powered by Grok · 6,000 reviews in context</div></div>
       <button class="cw-close" onclick="toggleChat()">✕</button>
     </div>
     <div class="cw-msgs" id="cw-msgs">
@@ -487,16 +487,17 @@ footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--pap
     <span class="fab-dot"></span>
   </button>
 </div>
-
+ 
 <script>
 const OR_KEY = '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';
+const GROK_KEY = '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';
 const API = 'https://mosaicfellowship.in/api/data/npd/reviews';
-
+ 
 let reviews=[], needsMap={}, brandsMap={}, catsMap={}, platsMap={};
 let scores=[], ctx='', chatOpen=false, chatHist=[];
 let compareMode=false, compareSelected=[], briefCache={};
 let activeCategory='All';
-
+ 
 const LABELS={
   personalization_demand:'Personalisation Demand',allergen_labeling:'Allergen Labelling',
   skin_type_mismatch:'Skin Type Mismatch',result_tracking:'Result Tracking',
@@ -507,7 +508,7 @@ const LABELS={
   subscription_flexibility:'Subscription Flexibility',price_value_mismatch:'Price–Value Mismatch',
   dosage_confusion:'Dosage Confusion'
 };
-
+ 
 const PNAMES={
   ingredient_transparency:'Transparent Formula Skincare Line',
   vegan_certification:'Certified Vegan Wellness Range',
@@ -525,7 +526,7 @@ const PNAMES={
   fragrance_sensitivity:'Fragrance-Free Sensitive Range',
   travel_size_demand:'Travel-Ready Mini Collection'
 };
-
+ 
 const BRIEFS={
   ingredient_transparency:`<ul><li><strong>What to build:</strong> A skincare line where every ingredient is QR-scannable at purchase — customers see what's in the formula, why it's there, and third-party safety results instantly.</li><li><strong>Killer feature:</strong> "Nothing to Hide" label with a QR code linking to a full ingredient breakdown, sourcing details, and lab test certificates for each SKU.</li><li><strong>Why now:</strong> Indian consumers are becoming label-literate but brands are still hiding behind marketing claims — first-mover on transparency wins trust at scale.</li><li><strong>Attack vector:</strong> Target The Derma Co and Mamaearth customers who feel deceived by vague formulation claims.</li></ul>`,
   vegan_certification:`<ul><li><strong>What to build:</strong> A certified vegan wellness range where the certification isn't a side note — it's the entire brand identity and front-label promise.</li><li><strong>Killer feature:</strong> Every product links to a live auditor report; an allergen-free alternative is offered for every hero SKU, displayed side by side at purchase.</li><li><strong>Why now:</strong> "Contains gelatin capsules" buried in fine print is a trust-breaking moment — a verified clean label is an instant differentiator.</li><li><strong>Attack vector:</strong> MCaffeine and Plum customers who want plant-based but can't verify it.</li></ul>`,
@@ -543,7 +544,7 @@ const BRIEFS={
   fragrance_sensitivity:`<ul><li><strong>What to build:</strong> A fragrance-free wellness range — every product unscented by design and certified fragrance-free through a third party, not "lightly scented" or "naturally scented."</li><li><strong>Killer feature:</strong> A "Fragrance-Free Guarantee" badge backed by third-party certification — if a customer detects any fragrance, they get a full refund plus a ₹200 voucher for reporting it.</li><li><strong>Why now:</strong> "Unscented" products still contain masking fragrance across most Indian brands — genuine fragrance-free certification is a credible differentiator that resonates strongly with migraine and allergy sufferers.</li><li><strong>Attack vector:</strong> Bombay Shaving Co and Sugar Cosmetics customers who explicitly complain about overpowering artificial scents.</li></ul>`,
   travel_size_demand:`<ul><li><strong>What to build:</strong> A travel-ready mini collection — 50ml or under, TSA-compliant, sold individually and as curated travel kits for different categories (skincare, supplements, grooming).</li><li><strong>Killer feature:</strong> A "Try Before You Commit" subscription — customers get 3 minis per month for ₹299, select their favourite, get 20% off the full-size version automatically in month 2.</li><li><strong>Why now:</strong> Indian consumers travel frequently post-COVID but trusted D2C brand products don't exist in carry-on sizes — the mini becomes the trial vehicle that converts browsers into full-size loyalists.</li><li><strong>Attack vector:</strong> WOW Skin Science and Kapiva customers who've complained about products being too bulky for travel.</li></ul>`
 };
-
+ 
 async function fetchAll(){
   let page=1,total=60;
   while(page<=total){
@@ -568,7 +569,7 @@ async function fetchAll(){
   buildCtx();
   render();
 }
-
+ 
 function process(data){
   data.forEach(r=>{
     let needs=[];try{needs=JSON.parse(r.detected_unmet_needs||'[]');}catch(e){}
@@ -582,7 +583,7 @@ function process(data){
     platsMap[r.platform].n++;platsMap[r.platform].needs+=needs.length;platsMap[r.platform].rat+=r.rating;
   });
 }
-
+ 
 function compute(){
   const entries=Object.entries(needsMap).map(([key,d])=>{
     const count=d.reviews.length,avgR=d.totRating/count,avgH=d.totHelp/count;
@@ -599,7 +600,7 @@ function compute(){
   entries.forEach(e=>{e.score=Math.round(50+50*Math.pow((e.raw-mnR)/rng,0.6));});
   scores=entries;
 }
-
+ 
 function buildCtx(){
   const tn=scores.slice(0,10).map((n,i)=>
     `${i+1}. ${n.label}: ${n.count} mentions, avg ${n.avgR.toFixed(1)}★, score ${n.score}`
@@ -610,18 +611,18 @@ function buildCtx(){
   const ver=reviews.filter(r=>r.verified_purchase===1).length;
   const wn=reviews.filter(r=>{try{return JSON.parse(r.detected_unmet_needs||'[]').length>0;}catch(e){return false;}}).length;
   ctx=`You are a sharp product analyst with data from 6,000 Indian D2C competitor reviews (2025).
-
+ 
 DATASET: ${reviews.length} reviews, ${Object.keys(brandsMap).length} brands, ${Math.round(ver/reviews.length*100)}% verified, ${Math.round(wn/reviews.length*100)}% have unmet needs.
-
+ 
 TOP UNMET NEEDS (scored: frequency 40% + severity 35% + validation 25%):
 ${tn}
-
+ 
 BRANDS (unmet mentions): ${tb}
 PLATFORMS: ${ps}
-
+ 
 Answer in under 90 words. Use specific numbers. Be direct — you're briefing a CPO.`;
 }
-
+ 
 function render(){
   document.getElementById('k-rev').textContent=reviews.length.toLocaleString();
   document.getElementById('k-br').textContent=Object.keys(brandsMap).length;
@@ -635,55 +636,58 @@ function render(){
   const ld=document.getElementById('loader');ld.classList.add('hidden');
   setTimeout(()=>ld.style.display='none',700);
 }
-
+ 
 function renderCatFilter(){
   const cats=['All',...Object.keys(catsMap).sort()];
   const f=document.getElementById('cat-filter');
   f.innerHTML=cats.map(c=>`<button class="cf-btn ${c===activeCategory?'active':''}" onclick="setCat('${c}')">${c}</button>`).join('');
 }
-
+ 
 function setCat(cat){
   activeCategory=cat;
   renderCatFilter();
   renderTop3();
 }
-
+ 
 function renderTop3(){
   const g=document.getElementById('top3');g.innerHTML='';
   const ranks=['#1 Priority — Build Now','#2 Priority — Pipeline','#3 Priority — Roadmap'];
-
-  // Filter scores by category if needed
-  let filtered=scores;
-  if(activeCategory!=='All'){
-    // Find needs that appear in this category
-    const catNeeds={};
-    reviews.filter(r=>r.competitor_category===activeCategory).forEach(r=>{
-      let needs=[];try{needs=JSON.parse(r.detected_unmet_needs||'[]');}catch(e){}
-      needs.forEach(n=>{catNeeds[n]=(catNeeds[n]||0)+1;});
-    });
-    filtered=scores.filter(s=>catNeeds[s.key]>0).map(s=>{
-      // Recalculate count for this category
-      const catCount=catNeeds[s.key]||0;
-      return{...s,displayCount:catCount};
-    });
+ 
+  let displayItems;
+ 
+  if(activeCategory==='All'){
+    displayItems=scores.slice(0,3).map(s=>({...s,displayCount:s.count}));
+  } else {
+    // For each need, count mentions only within this category
+    const catScores=scores.map(s=>{
+      const catRevs=s.data.reviews.filter(r=>r.competitor_category===activeCategory);
+      return{...s,displayCount:catRevs.length,catRevs};
+    }).filter(s=>s.displayCount>0);
+    // Re-sort by catRevs count for this category
+    catScores.sort((a,b)=>b.displayCount-a.displayCount);
+    displayItems=catScores.slice(0,3);
   }
-
-  filtered.slice(0,3).forEach((item,i)=>{
-    const bc={};item.data.reviews.filter(r=>activeCategory==='All'||r.competitor_category===activeCategory)
-      .forEach(r=>{bc[r.competitor_brand]=(bc[r.competitor_brand]||0)+1;});
+ 
+  if(displayItems.length===0){
+    g.innerHTML='<div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--ink3);font-size:14px;background:var(--paper2);border-radius:12px;border:1px solid var(--border);">No unmet need data available for this category.</div>';
+    return;
+  }
+ 
+  displayItems.forEach((item,i)=>{
+    const revs=activeCategory==='All'?item.data.reviews:item.data.reviews.filter(r=>r.competitor_category===activeCategory);
+    const bc={};revs.forEach(r=>{bc[r.competitor_brand]=(bc[r.competitor_brand]||0)+1;});
     const topB=Object.entries(bc).sort((a,b)=>b[1]-a[1])[0];
     const pname=PNAMES[item.key]||item.label+' Product';
-    const brief=BRIEFS[item.key]||`<ul><li><strong>Launch</strong> a product directly addressing the ${item.label.toLowerCase()} gap with radical transparency as its core differentiator.</li><li><strong>Key feature:</strong> Third-party verification and plain-language claims at every touchpoint.</li><li><strong>Why now:</strong> Indian D2C brands have prioritised marketing over product trust — this is the trust window.</li></ul>`;
-    const displayCount=item.displayCount||item.count;
+    const brief=BRIEFS[item.key]||`<ul><li><strong>What to build:</strong> A product addressing the ${item.label.toLowerCase()} gap.</li><li><strong>Killer feature:</strong> Third-party verification at every touchpoint.</li><li><strong>Why now:</strong> First-mover on trust wins this category.</li></ul>`;
     const card=document.createElement('div');
     card.className='pcard';
     card.innerHTML=`
       <div class="pcard-num">${i+1}</div>
       <div class="pcard-rank">${ranks[i]}${activeCategory!=='All'?` · ${activeCategory}`:''}</div>
       <div class="pcard-name">${pname}</div>
-      <div class="pcard-desc">Addresses the <strong>"${item.label}"</strong> gap — ${displayCount} complaints${activeCategory!=='All'?' in '+activeCategory:' across all categories'}, avg ${item.avgR.toFixed(1)}★ satisfaction.</div>
+      <div class="pcard-desc">Addresses the <strong>"${item.label}"</strong> gap — <strong>${item.displayCount}</strong> complaints${activeCategory!=='All'?' in '+activeCategory:' across all categories'}, avg ${item.avgR.toFixed(1)}★ satisfaction.</div>
       <div class="pcard-stats">
-        <span class="pcard-stat">${displayCount} mentions</span>
+        <span class="pcard-stat">${item.displayCount} mentions</span>
         <span class="pcard-stat">Score: ${item.score}</span>
         <span class="pcard-stat">${item.avgR.toFixed(1)}★ avg</span>
         ${topB?`<span class="pcard-stat">Attack: ${topB[0]}</span>`:''}
@@ -694,12 +698,8 @@ function renderTop3(){
     card.addEventListener('click',()=>openMo(item));
     g.appendChild(card);
   });
-
-  if(filtered.length===0){
-    g.innerHTML='<div style="padding:40px;text-align:center;color:var(--ink3);font-size:14px;">No data available for this category filter.</div>';
-  }
 }
-
+ 
 function renderInsights(){
   const pe=Object.entries(platsMap).map(([p,d])=>({p,avg:d.rat/d.n})).sort((a,b)=>a.avg-b.avg);
   const wp=pe[0];
@@ -712,7 +712,7 @@ function renderInsights(){
     const cr=reviews.filter(r=>r.competitor_category===cat).length;
     return{cat,dens:needs/cr};
   }).sort((a,b)=>b.dens-a.dens)[0];
-
+ 
   document.getElementById('insights').innerHTML=`
     <div class="ins-card">
       <div class="ins-tag">Platform Discovery</div>
@@ -731,16 +731,16 @@ function renderInsights(){
     </div>
   `;
 }
-
+ 
 function renderFormExamples(){
   const top=scores[0];
   document.getElementById('eg1').textContent=`${top.count} reviews mention ${top.label.toLowerCase()}`;
   document.getElementById('eg2').textContent=`Avg ${top.avgR.toFixed(1)}★ = extreme frustration signal`;
   document.getElementById('eg3').textContent=`Avg ${Math.round(top.avgH)} helpful votes per complaint`;
 }
-
+ 
 function getColor(s){if(s>=85)return'#c84b2f';if(s>=70)return'#e8a020';if(s>=55)return'#2a6e4e';return'#7a7568';}
-
+ 
 function renderGrid(){
   const g=document.getElementById('opp-grid');
   const hdr=g.querySelector('.opp-hdr');g.innerHTML='';g.appendChild(hdr);
@@ -765,7 +765,7 @@ function renderGrid(){
     g.appendChild(row);
   });
 }
-
+ 
 function renderBrands(){
   const s=Object.entries(brandsMap).sort((a,b)=>b[1]-a[1]);const mx=s[0]?.[1]||1;
   document.getElementById('brand-list').innerHTML=s.map(([b,c])=>`
@@ -773,20 +773,20 @@ function renderBrands(){
     <div class="bbar-wrap"><div class="bbar" style="width:${Math.round((c/mx)*100)}%"></div></div>
     <div class="bcount">${c}</div></div>`).join('');
 }
-
+ 
 function renderCats(){
   const s=Object.entries(catsMap).sort((a,b)=>b[1]-a[1]);
   document.getElementById('cat-grid').innerHTML=s.map(([c,n])=>`
     <div class="cat-item"><div class="cat-name">${c}</div><div class="cat-count">${n} mentions</div></div>`).join('');
 }
-
+ 
 function renderPlats(){
   const s=Object.entries(platsMap).sort((a,b)=>b[1].needs-a[1].needs);
   document.getElementById('plat-list').innerHTML=s.map(([p,d])=>`
     <div class="plat-row"><div class="plat-name">${p}</div>
     <div class="plat-stats"><span>${d.n.toLocaleString()} reviews</span><span>${d.needs} needs</span><span>${(d.rat/d.n).toFixed(1)}★</span></div></div>`).join('');
 }
-
+ 
 function renderQuality(){
   const ver=reviews.filter(r=>r.verified_purchase===1).length;
   const wn=reviews.filter(r=>{try{return JSON.parse(r.detected_unmet_needs||'[]').length>0;}catch(e){return false;}}).length;
@@ -810,7 +810,7 @@ function renderQuality(){
       </div>
     </div>`;
 }
-
+ 
 /* MODAL */
 function openMo(item){
   document.getElementById('mo-title').textContent=item.label;
@@ -818,8 +818,8 @@ function openMo(item){
   document.getElementById('mo-freq').textContent=item.count;
   document.getElementById('mo-rat').textContent=item.avgR.toFixed(1)+'★';
   document.getElementById('mo-hlp').textContent=Math.round(item.avgH);
-  // Brief — always instant from pre-written cache
-  document.getElementById('mo-brief').textContent=BRIEFS[item.key]||`Launch a product addressing the ${item.label.toLowerCase()} gap with radical transparency as its core differentiator. This gap exists because Indian D2C brands have prioritised marketing over product trust. Lead with third-party verification and plain-language efficacy claims.`;
+  // Brief — use innerHTML so bullet points render correctly
+  document.getElementById('mo-brief').innerHTML=BRIEFS[item.key]||`<ul><li><strong>What to build:</strong> A product directly addressing the ${item.label.toLowerCase()} gap with radical transparency as its core differentiator.</li><li><strong>Killer feature:</strong> Third-party verification and plain-language claims displayed at every customer touchpoint.</li><li><strong>Why now:</strong> Indian D2C brands have prioritised marketing over product trust — this is the window to win on credibility.</li></ul>`;
   // Brands
   const bc={};item.data.reviews.forEach(r=>{bc[r.competitor_brand]=(bc[r.competitor_brand]||0)+1;});
   const sb=Object.entries(bc).sort((a,b)=>b[1]-a[1]);const mx=sb[0]?.[1]||1;
@@ -840,12 +840,12 @@ function openMo(item){
   document.getElementById('mo').classList.add('open');
   document.body.style.overflow='hidden';
 }
-
+ 
 function closeMo(){
   document.getElementById('mo').classList.remove('open');
   document.body.style.overflow='';
 }
-
+ 
 /* COMPARE */
 function toggleCompareMode(){
   compareMode=!compareMode;
@@ -863,7 +863,7 @@ function toggleCompareMode(){
     document.getElementById('compare-toggle').scrollIntoView({behavior:'smooth',block:'center'});
   }
 }
-
+ 
 function toggleCompareSelect(item,row){
   const idx=compareSelected.findIndex(s=>s.key===item.key);
   if(idx>=0){
@@ -877,44 +877,68 @@ function toggleCompareSelect(item,row){
   const c=document.getElementById('compare-count');
   c.textContent=compareSelected.length===0?'select 2 needs':compareSelected.length===1?`"${compareSelected[0].label}" selected — select 1 more`:`"${compareSelected[0].label}" vs "${compareSelected[1].label}"`;
 }
-
+ 
 function runComparison(){
   if(compareSelected.length<2){alert('Please select exactly 2 needs from the rankings.');return;}
   const [a,b]=compareSelected;
-  const winner=(metric)=>a[metric]>b[metric]?'a':b[metric]>a[metric]?'b':'tie';
+  const aWins=(metric)=>a[metric]>b[metric];
+  const bWins=(metric)=>b[metric]>a[metric];
   const panel=document.getElementById('compare-panel');
-  panel.classList.add('show');
   panel.innerHTML=`
-    <div class="sec-hdr"><div class="sec-title">Head-to-Head Comparison</div><div class="sec-sub">Which gap is the bigger opportunity?</div></div>
+    <div class="sec-hdr" style="margin-top:20px"><div class="sec-title">Head-to-Head Comparison</div><div class="sec-sub">Which gap is the bigger opportunity?</div></div>
     <div class="compare-grid">
-      ${[a,b].map((item,i)=>`
-        <div class="compare-card">
+      ${[a,b].map((item,i)=>{
+        const other=i===0?b:a;
+        return`<div class="compare-card">
           <div class="compare-card-title">${item.label}</div>
-          <div class="compare-metric"><span class="compare-metric-label">Opportunity Score</span><span class="compare-metric-val ${winner('score')===(i===0?'a':'b')?'compare-winner':''}">${item.score}/100</span></div>
-          <div class="compare-metric"><span class="compare-metric-label">Total Mentions</span><span class="compare-metric-val ${winner('count')===(i===0?'a':'b')?'compare-winner':''}">${item.count.toLocaleString()}</span></div>
-          <div class="compare-metric"><span class="compare-metric-label">Avg Customer Rating</span><span class="compare-metric-val ${winner('avgR')===(i===0?'b':'a')?'compare-winner':''}">${item.avgR.toFixed(2)}★</span></div>
-          <div class="compare-metric"><span class="compare-metric-label">Avg Helpful Votes</span><span class="compare-metric-val ${winner('avgH')===(i===0?'a':'b')?'compare-winner':''}">${Math.round(item.avgH)}</span></div>
-          <div class="compare-metric"><span class="compare-metric-label">Recommended Product</span><span class="compare-metric-val" style="font-size:11px;text-align:right;max-width:180px">${PNAMES[item.key]||item.label}</span></div>
-        </div>
-      `).join('')}
+          <div class="compare-metric">
+            <span class="compare-metric-label">Opportunity Score</span>
+            <span class="compare-metric-val ${item.score>other.score?'compare-winner':''}">${item.score}/100</span>
+          </div>
+          <div class="compare-metric">
+            <span class="compare-metric-label">Total Mentions</span>
+            <span class="compare-metric-val ${item.count>other.count?'compare-winner':''}">${item.count.toLocaleString()}</span>
+          </div>
+          <div class="compare-metric">
+            <span class="compare-metric-label">Avg Customer Rating</span>
+            <span class="compare-metric-val ${item.avgR<other.avgR?'compare-winner':''}">${item.avgR.toFixed(2)}★ <span style="font-size:10px;color:var(--ink3)">(lower = more pain)</span></span>
+          </div>
+          <div class="compare-metric">
+            <span class="compare-metric-label">Avg Helpful Votes</span>
+            <span class="compare-metric-val ${item.avgH>other.avgH?'compare-winner':''}">${Math.round(item.avgH)}</span>
+          </div>
+          <div class="compare-metric">
+            <span class="compare-metric-label">Recommended Product</span>
+            <span class="compare-metric-val" style="font-size:11px;text-align:right;max-width:180px">${PNAMES[item.key]||item.label}</span>
+          </div>
+          <div style="margin-top:16px;padding:14px;background:var(--paper2);border-radius:8px;border-left:3px solid var(--accent)">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink3);margin-bottom:8px">Product Brief</div>
+            <div style="font-size:12px;line-height:1.6;color:var(--ink2)">${BRIEFS[item.key]||'See full analysis for details.'}</div>
+          </div>
+        </div>`;
+      }).join('')}
     </div>
     <div style="margin-top:16px;padding:16px 20px;background:var(--paper2);border-radius:10px;border:1px solid var(--border);font-size:14px;color:var(--ink2);">
-      <strong>Verdict:</strong> ${a.score>b.score?`<strong>${a.label}</strong> ranks higher by opportunity score (${a.score} vs ${b.score}), but ${b.label} has ${b.count>a.count?'more mentions':'lower customer ratings'} — suggesting ${b.count>a.count?'broader reach but lower intensity':'deeper frustration per complaint'}.`:a.score<b.score?`<strong>${b.label}</strong> ranks higher by opportunity score (${b.score} vs ${a.score}), but ${a.label} has ${a.count>b.count?'more mentions — suggesting broader reach':'lower customer ratings — suggesting deeper frustration per complaint'}.`:`Both needs score equally — prioritise based on your brand's existing capabilities and target segment.`}
+      <strong>Verdict:</strong> ${a.score>b.score
+        ?`<strong>${a.label}</strong> scores higher (${a.score} vs ${b.score}) — it's both more frequent and more validated. However, ${b.label} has a lower avg rating (${b.avgR.toFixed(1)}★ vs ${a.avgR.toFixed(1)}★) suggesting deeper per-complaint frustration. Prioritise ${a.label} for scale; consider ${b.label} for premium differentiation.`
+        :a.score<b.score
+        ?`<strong>${b.label}</strong> scores higher (${b.score} vs ${a.score}) — stronger across frequency, severity, and validation. ${a.label} has ${a.avgR<b.avgR?'lower ratings suggesting deeper per-complaint pain':'fewer but more validated mentions'}. Build for ${b.label} first.`
+        :`Both needs score equally — choose based on your brand's existing supply chain capabilities and target customer segment.`}
     </div>
   `;
-  panel.scrollIntoView({behavior:'smooth'});
+  panel.scrollIntoView({behavior:'smooth',block:'start'});
 }
-
+ 
 /* CHAT — OpenRouter */
 function toggleChat(){
   chatOpen=!chatOpen;
   document.getElementById('chat-win').classList.toggle('open',chatOpen);
   if(chatOpen)setTimeout(()=>document.getElementById('cinput').focus(),100);
 }
-
+ 
 function chatKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}}
 function useSug(btn){document.getElementById('cinput').value=btn.textContent;document.getElementById('cw-sugs').style.display='none';sendChat();}
-
+ 
 async function sendChat(){
   const inp=document.getElementById('cinput');
   const msg=inp.value.trim();if(!msg)return;
@@ -924,30 +948,29 @@ async function sendChat(){
   const btn=document.getElementById('csend');btn.disabled=true;
   addMsg('ai','Thinking...','typing-msg');
   try{
-    const res=await fetch('https://openrouter.ai/api/v1/chat/completions',{
+    const res=await fetch('https://api.x.ai/v1/chat/completions',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
-        'Authorization':`Bearer ${OR_KEY}`,
-        'HTTP-Referer':'https://npd-claude.vercel.app',
-        'X-Title':'NPD Intelligence'
+        'Authorization':`Bearer ${GROK_KEY}`
       },
       body:JSON.stringify({
-        model:'mistralai/mistral-7b-instruct:free',
+        model:'grok-3-fast',
         messages:[
-          {role:'system',content:`You are a sharp product analyst. Answer in under 80 words. Use specific numbers. Be direct.\n\n${ctx}`},
+          {role:'system',content:`You are a sharp product analyst with data from 6,000 Indian D2C competitor reviews (2025). Answer in under 90 words. Use specific numbers from the data provided. Be direct and insightful — you're briefing a CPO.\n\n${ctx}`},
           ...chatHist
         ],
         max_tokens:200,
         temperature:0.7
       })
     });
+    if(!res.ok) throw new Error(`${res.status}`);
     const d=await res.json();
     const reply=d.choices?.[0]?.message?.content;
     if(reply&&reply.trim()){
       removeTyping();addMsg('ai',reply.trim());
       chatHist.push({role:'assistant',content:reply.trim()});
-    }else{throw new Error('empty');}
+    } else throw new Error('empty');
   }catch(e){
     removeTyping();
     const fallback=smartFallback(msg);
@@ -956,7 +979,7 @@ async function sendChat(){
   }
   btn.disabled=false;inp.focus();
 }
-
+ 
 function smartFallback(msg){
   const q=msg.toLowerCase();
   if(q.includes('build first')||q.includes('top')||q.includes('priority')||q.includes('what should')){
@@ -976,7 +999,7 @@ function smartFallback(msg){
   const top3=scores.slice(0,3).map((s,i)=>`${i+1}. ${s.label} (${s.count} mentions, score ${s.score})`).join(', ');
   return`Top 3 opportunities from 6,000 reviews: ${top3}. Try asking about specific brands, platforms, or categories like "What are the Skin Care gaps?" or "Which brand is worst?"`;
 }
-
+ 
 function addMsg(role,text,id=''){
   const msgs=document.getElementById('cw-msgs');
   const div=document.createElement('div');div.className=`cmsg ${role}`;if(id)div.id=id;
@@ -985,7 +1008,7 @@ function addMsg(role,text,id=''){
   msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
 }
 function removeTyping(){const t=document.getElementById('typing-msg');if(t)t.remove();}
-
+ 
 fetchAll();
 </script>
 </body>
