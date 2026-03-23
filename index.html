@@ -15,7 +15,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.6;}
- 
+
 /* LOADER */
 #loader{position:fixed;inset:0;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:28px;transition:opacity 0.6s ease;}
 #loader.hidden{opacity:0;pointer-events:none;}
@@ -27,9 +27,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .ld-bar-wrap{width:300px;height:2px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
 .ld-bar{height:100%;background:var(--accent);width:0%;border-radius:2px;transition:width 0.25s ease;}
 .ld-status{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;}
- 
+
 #app{display:none;}#app.visible{display:block;}
- 
+
 /* HEADER */
 .hdr{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);background:rgba(250,248,244,0.92);}
 .hdr-in{max-width:1280px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;}
@@ -42,7 +42,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .compare-btn{font-size:13px;font-weight:500;padding:7px 14px;background:var(--paper2);color:var(--ink);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;}
 .compare-btn:hover{background:var(--paper3);}
 .compare-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
- 
+
 /* HERO */
 .hero{background:var(--ink);color:var(--paper);padding:56px 32px 48px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,75,47,0.15) 0%,transparent 70%);pointer-events:none;}
@@ -57,13 +57,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .kpi-val{font-family:'DM Serif Display',serif;font-size:30px;color:var(--paper);line-height:1;margin-bottom:3px;}
 .kpi-val.red{color:var(--accent);}
 .kpi-lab{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.8px;text-transform:uppercase;color:rgba(250,248,244,0.35);}
- 
+
 /* CONTENT */
 .content{max-width:1280px;margin:0 auto;padding:48px 32px;}
 .sec-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--border);}
 .sec-title{font-family:'DM Serif Display',serif;font-size:24px;letter-spacing:-0.3px;}
 .sec-sub{font-size:13px;color:var(--ink3);}
- 
+
 /* TOP 3 — consistent style */
 .top3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
 @media(max-width:900px){.top3{grid-template-columns:1fr;}}
@@ -81,13 +81,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .pcard-brief li::before{content:'→';color:var(--accent);font-weight:600;flex-shrink:0;margin-top:1px;}
 .pcard-brief li strong{color:var(--ink);font-weight:600;}
 .pcard-cta{margin-top:14px;font-size:12px;font-weight:500;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:0.5px;position:relative;z-index:1;}
- 
+
 /* CAT FILTER */
 .cat-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
 .cf-btn{font-size:12px;padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--paper2);color:var(--ink2);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;font-weight:500;}
 .cf-btn:hover{border-color:var(--accent);color:var(--accent);}
 .cf-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
- 
+
 /* COMPARE (below rankings) */
 .compare-section{margin-top:24px;margin-bottom:48px;}
 .compare-toggle-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
@@ -100,7 +100,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .compare-banner strong{color:var(--accent);}
 .compare-banner button{font-size:12px;padding:6px 14px;background:var(--ink);color:var(--paper);border:none;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .opp-row.compare-selected{border-color:var(--accent)!important;background:rgba(200,75,47,0.04)!important;}
- 
+
 /* COMPARISON PANEL */
 #compare-panel{display:none;margin-bottom:48px;}
 #compare-panel.show{display:block;}
@@ -112,7 +112,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .compare-metric-label{color:var(--ink3);}
 .compare-metric-val{font-weight:600;font-family:'DM Mono',monospace;font-size:13px;}
 .compare-winner{color:var(--accent3);}
- 
+
 /* INSIGHTS */
 .insights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
 @media(max-width:768px){.insights{grid-template-columns:1fr;}}
@@ -120,7 +120,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .ins-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
 .ins-head{font-weight:600;font-size:14px;margin-bottom:6px;line-height:1.4;}
 .ins-body{font-size:13px;color:var(--ink3);line-height:1.6;}
- 
+
 /* HOW WE SCORED */
 .scored-box{background:var(--paper2);border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:48px;}
 .scored-title{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:6px;}
@@ -138,7 +138,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .formula-box.open{display:block;}
 .fline{font-family:'DM Mono',monospace;font-size:13px;color:rgba(250,248,244,0.8);margin-bottom:8px;}
 .fline span{color:var(--accent2);}
- 
+
 /* OPP GRID */
 .opp-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:48px;}
 .opp-row{display:grid;grid-template-columns:28px 1fr 140px 80px 80px 80px 90px;align-items:center;gap:16px;padding:14px 20px;background:var(--paper);border:1px solid var(--border);border-radius:10px;transition:all 0.2s;cursor:pointer;}
@@ -157,7 +157,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .badge.critical{background:rgba(200,75,47,0.12);color:var(--accent);}
 .badge.high{background:rgba(232,160,32,0.12);color:#b07800;}
 .badge.medium{background:rgba(42,110,78,0.1);color:var(--accent3);}
- 
+
 /* TWO COL */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;}
 @media(max-width:768px){.two-col{grid-template-columns:1fr;}}
@@ -176,7 +176,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .plat-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--paper2);border-radius:8px;margin-bottom:8px;}
 .plat-name{font-size:13px;font-weight:500;}
 .plat-stats{display:flex;gap:14px;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
- 
+
 /* TREND */
 .trend-sec{background:var(--paper);border:1px solid var(--border);border-top:3px solid var(--accent2);border-radius:12px;padding:36px;margin-bottom:100px;}
 .trend-eye{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
@@ -190,7 +190,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .tcard-body{font-size:13px;color:var(--ink3);line-height:1.6;}
 .tcard-tag{display:inline-block;margin-top:10px;font-family:'DM Mono',monospace;font-size:10px;padding:3px 8px;background:rgba(232,160,32,0.12);color:#a07000;border-radius:4px;}
 .trend-disc{margin-top:20px;font-size:12px;color:var(--ink3);font-style:italic;padding-top:16px;border-top:1px solid var(--border);}
- 
+
 /* MODAL */
 #mo{position:fixed;inset:0;z-index:500;display:none;}
 #mo.open{display:flex;}
@@ -218,7 +218,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .rev-brand{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;background:var(--paper3);border-radius:4px;color:var(--ink2);}
 .rev-helpful{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);}
 .rev-text{font-size:13px;color:var(--ink2);line-height:1.6;font-style:italic;}
- 
+
 /* FLOATING CHAT */
 #chat-wrap{position:fixed;bottom:24px;right:24px;z-index:400;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
 #chat-win{width:360px;background:var(--paper);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow2);display:none;flex-direction:column;overflow:hidden;max-height:500px;}
@@ -251,38 +251,63 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .chat-fab:hover{transform:scale(1.08);}
 .chat-fab svg{width:22px;height:22px;fill:var(--paper);}
 .fab-dot{position:absolute;top:1px;right:1px;width:12px;height:12px;background:#4ade80;border-radius:50%;border:2px solid var(--paper);}
- 
+
 footer{border-top:1px solid var(--border);padding:20px 32px;background:var(--paper2);text-align:center;}
 .foot-in{max-width:1280px;margin:0 auto;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-./* TRUST FLYWHEEL */
+.fu{animation:fadeUp 0.5s ease both;}
+.fu1{animation-delay:0.08s;}.fu2{animation-delay:0.16s;}.fu3{animation-delay:0.24s;}
+
 .trust-flywheel{background:var(--ink);color:var(--paper);border-radius:16px;padding:40px;margin-bottom:32px;}
 .tf-eye{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
-.tf-title{font-family:'DM Serif Display',serif;font-size:26px;letter-spacing:-0.3px;margin-bottom:6px;}
+.tf-title{font-family:'DM Serif Display',serif;font-size:26px;letter-spacing:-0.3px;margin-bottom:6px;color:var(--paper);}
 .tf-sub{font-size:14px;color:rgba(250,248,244,0.45);margin-bottom:32px;}
 .tf-steps{display:flex;flex-direction:column;gap:0;}
 .tf-step{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
 .tf-step:last-child{border-bottom:none;}
-.tf-num{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:12px;font-weight:600;flex-shrink:0;margin-top:2px;}
+.tf-num{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:12px;font-weight:600;color:#fff;flex-shrink:0;margin-top:2px;}
 .tf-step-title{font-weight:600;font-size:15px;margin-bottom:4px;color:var(--paper);}
-.tf-step-body{font-size:13px;color:rgba(250,248,244,0.55);line-height:1.6;}
-.tf-arrow{text-align:center;font-size:18px;color:rgba(255,255,255,0.15);padding:4px 0;}
-.tf-takeaway{margin-top:24px;padding:20px 24px;background:rgba(200,75,47,0.15);border:1px solid rgba(200,75,47,0.3);border-radius:10px;font-size:14px;line-height:1.7;color:rgba(250,248,244,0.8);font-style:italic;}
-.tf-takeaway strong{color:var(--accent);font-style:normal;}
- 
-/* THESIS QUOTES */
+.tf-step-body{font-size:13px;color:rgba(250,248,244,0.6);line-height:1.6;}
+.tf-arrow{padding-left:44px;font-size:16px;color:rgba(255,255,255,0.2);padding-top:4px;padding-bottom:4px;}
+.tf-takeaway{margin-top:24px;padding:20px 24px;background:rgba(200,75,47,0.18);border:1px solid rgba(200,75,47,0.35);border-radius:10px;font-size:14px;line-height:1.7;color:rgba(250,248,244,0.85);}
+.tf-takeaway strong{color:var(--accent);}
+
 .thesis-strip{margin-bottom:48px;}
 .thesis-eye{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;}
 .thesis-quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
 @media(max-width:768px){.thesis-quotes{grid-template-columns:1fr;}}
-.tq{background:var(--paper2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;font-size:14px;line-height:1.6;color:var(--ink2);font-style:italic;}
- 
-fu{animation:fadeUp 0.5s ease both;}
-.fu1{animation-delay:0.08s;}.fu2{animation-delay:0.16s;}.fu3{animation-delay:0.24s;}
+.tq{background:var(--paper2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;font-size:14px;line-height:1.6;color:var(--ink2);}
+
+.brands-watch{margin-bottom:48px;}
+.bw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+@media(max-width:768px){.bw-grid{grid-template-columns:1fr;}}
+.bw-region{background:var(--paper);border:1px solid var(--border);border-radius:12px;padding:24px;}
+.bw-region-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.bw-brand{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border2);}
+.bw-brand:last-child{border-bottom:none;}
+.bw-brand-name{font-weight:600;font-size:13px;min-width:130px;flex-shrink:0;}
+.bw-brand-pos{font-size:12px;color:var(--ink3);line-height:1.5;}
+.bw-brand-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;padding:2px 6px;border-radius:4px;background:rgba(200,75,47,0.1);color:var(--accent);margin-left:4px;vertical-align:middle;white-space:nowrap;}
+
+.chart-bar-wrap{display:flex;align-items:center;gap:12px;margin-bottom:10px;position:relative;}
+.chart-bar-label{font-size:13px;font-weight:500;min-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.chart-bar-track{flex:1;height:8px;background:var(--paper3);border-radius:4px;position:relative;}
+.chart-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 0.8s cubic-bezier(0.4,0,0.2,1);}
+.chart-bar-wrap:hover .chart-bar-fill{opacity:0.75;}
+.chart-bar-val{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);min-width:36px;text-align:right;}
+
+.cat-chart{display:flex;flex-direction:column;gap:10px;}
+.cat-chart-item{padding:12px 14px;background:var(--paper2);border-radius:8px;border:1px solid var(--border2);transition:all 0.2s;cursor:default;}
+.cat-chart-item:hover{border-color:rgba(200,75,47,0.3);background:var(--paper);}
+.cat-chart-top{display:flex;justify-content:space-between;margin-bottom:8px;}
+.cat-chart-name{font-size:13px;font-weight:500;}
+.cat-chart-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);}
+.cat-chart-bar{height:5px;background:var(--paper3);border-radius:3px;overflow:hidden;}
+.cat-chart-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 0.8s cubic-bezier(0.4,0,0.2,1);}
 </style>
 </head>
 <body>
- 
+
 <div id="loader">
   <div class="ld-brand">NPD <span>Intelligence</span></div>
   <div class="ld-stats">
@@ -293,7 +318,7 @@ fu{animation:fadeUp 0.5s ease both;}
   <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
   <div class="ld-status" id="ld-status">Initialising pipeline...</div>
 </div>
- 
+
 <div id="app">
 <header class="hdr">
   <div class="hdr-in">
@@ -307,7 +332,7 @@ fu{animation:fadeUp 0.5s ease both;}
     </div>
   </div>
 </header>
- 
+
 <section class="hero">
   <div class="hero-in">
     <div class="hero-eye">Consumer Need-Gap Analysis · Indian D2C Market 2025</div>
@@ -321,25 +346,24 @@ fu{animation:fadeUp 0.5s ease both;}
     </div>
   </div>
 </section>
- 
+
 <div class="content">
- 
-  <!-- TOP 3 -->
+
+  <!-- TOP PRODUCTS -->
   <div class="sec-hdr fu">
-    <div class="sec-title">Top 3 Products to Build</div>
-    <div class="sec-sub">Ranked by opportunity score across 6,000 reviews · Click any card for full analysis</div>
+    <div class="sec-title">Products to Build</div>
+    <div class="sec-sub">Highest-opportunity product ideas from 6,000 competitor reviews</div>
   </div>
-  <!-- Mosaic-relevant lens filters only -->
-  <div class="cat-filter fu" id="cat-filter"></div>
+  <div class="top3 fu fu1" id="top3" style="grid-template-columns:repeat(3,1fr);"></div>
   <div class="top3 fu fu1" id="top3"></div>
- 
+
   <!-- INSIGHTS -->
   <div class="sec-hdr fu fu1">
     <div class="sec-title">What the Data Actually Shows</div>
     <div class="sec-sub">Non-obvious patterns beyond the rankings</div>
   </div>
   <div class="insights fu fu1" id="insights"></div>
- 
+
   <!-- TRUST DEFICIT FLYWHEEL -->
   <div class="trust-flywheel fu fu2">
     <div class="tf-eye">Analyst's Thesis</div>
@@ -360,18 +384,44 @@ fu{animation:fadeUp 0.5s ease both;}
       <strong>For founders:</strong> "Indian D2C consumers are not underserved by products — they are underserved by trust, clarity, and control. Winning brands will not sell more SKUs — they will reduce decision complexity."
     </div>
   </div>
- 
+
   <!-- THESIS QUOTES -->
   <div class="thesis-strip fu fu2">
-    <div class="thesis-eye">Key Takeaways from the Data</div>
+    <div class="thesis-eye">What This Data Is Really Saying</div>
     <div class="thesis-quotes">
-      <div class="tq">"Transparency is no longer a differentiator — it is becoming the minimum requirement for conversion."</div>
-      <div class="tq">"Consumers are shifting from product buyers to outcome seekers."</div>
-      <div class="tq">"Most brands are optimizing for acquisition, while consumers are optimizing for risk reduction."</div>
-      <div class="tq">"The category doesn't suffer from lack of innovation — it suffers from lack of credibility."</div>
+      <div class="tq">The brands getting the most complaints — The Derma Co, Mamaearth, MCaffeine — are also the biggest spenders on ads. More reach, more disappointed customers.</div>
+      <div class="tq">74% of reviews in this dataset flag at least one unmet need. That's not a product problem. That's a communication and trust problem at category scale.</div>
+      <div class="tq">Customers aren't asking for better products. They're asking to understand what they're buying, see proof that it works, and feel like the brand is being straight with them.</div>
+      <div class="tq">The first Indian D2C brand that treats transparency as a product feature — not a marketing claim — has a clear runway to own the trust-conscious segment.</div>
     </div>
   </div>
- 
+
+  <!-- GLOBAL BRANDS TO WATCH -->
+  <div class="brands-watch fu fu2">
+    <div class="sec-hdr" style="margin-bottom:20px">
+      <div class="sec-title">Global Brands Worth Watching</div>
+      <div class="sec-sub">Models that map directly to gaps in this dataset — most not yet in India</div>
+    </div>
+    <div class="bw-grid">
+      <div class="bw-region">
+        <div class="bw-region-title">🇺🇸 United States</div>
+        <div class="bw-brand"><div class="bw-brand-name">CeraVe<span class="bw-brand-tag">Transparency</span></div><div class="bw-brand-pos">Dermatologist-developed, no-frills formulations at mass price points. India has no equivalent — every brand either goes clinical premium or marketing-heavy mass.</div></div>
+        <div class="bw-brand"><div class="bw-brand-name">Function of Beauty<span class="bw-brand-tag">Personalisation</span></div><div class="bw-brand-pos">Quiz → custom formula → your name on the bottle. Maps directly to the 598 personalisation_demand complaints in this dataset.</div></div>
+        <div class="bw-brand"><div class="bw-brand-name">Hims & Hers<span class="bw-brand-tag">Men's + Telehealth</span></div><div class="bw-brand-pos">Skin + hair treatment bundled with async doctor consultation and subscription delivery. The Man Matters adjacency is obvious.</div></div>
+        <div class="bw-brand"><div class="bw-brand-name">InsideTracker<span class="bw-brand-tag">Outcome Tracking</span></div><div class="bw-brand-pos">Biomarker tracking tied to supplement recommendations. Direct answer to 585 result_tracking complaints — customers want proof their supplement is working.</div></div>
+      </div>
+      <div class="bw-region">
+        <div class="bw-region-title">🇰🇷 Korea</div>
+        <div class="bw-brand"><div class="bw-brand-name">COSRX<span class="bw-brand-tag">Ingredient-first</span></div><div class="bw-brand-pos">Every product named after its hero ingredient. No marketing noise. Ingredient transparency as the entire brand identity — exactly what this data says India needs.</div></div>
+        <div class="bw-brand"><div class="bw-brand-name">Skin1004<span class="bw-brand-tag">Sensitive Skin</span></div><div class="bw-brand-pos">Centella-based line for reactive, sensitive skin. Clean label, minimal ingredients, strong dermatologist association. Maps to skin_type_mismatch and side_effect_concern gaps.</div></div>
+        <div class="bw-region-title" style="margin-top:20px">🇬🇧 Europe & India Emerging</div>
+        <div class="bw-brand"><div class="bw-brand-name">The Ordinary<span class="bw-brand-tag">Price Transparency</span></div><div class="bw-brand-pos">Named-ingredient products at cost-based pricing with no markup pretense. Directly addresses price_value_mismatch — 572 complaints in this dataset.</div></div>
+        <div class="bw-brand"><div class="bw-brand-name">Be Bodywise (India)<span class="bw-brand-tag">Women's Wellness</span></div><div class="bw-brand-pos">Mosaic Wellness brand — science-backed women's health. Biggest gap in their category from this data: skin type specificity and efficacy timelines.</div></div>
+        <div class="bw-brand"><div class="bw-brand-name">Clinikally (India)<span class="bw-brand-tag">Clinical Skincare</span></div><div class="bw-brand-pos">Prescription-grade skincare with dermatologist consultation. Early mover in clinical D2C — but limited reach and high price point creates space for a mass-market version.</div></div>
+      </div>
+    </div>
+  </div>
+
   <!-- HOW WE SCORED -->
   <div class="scored-box fu fu2">
     <div class="scored-title">How We Ranked Every Problem</div>
@@ -405,7 +455,7 @@ fu{animation:fadeUp 0.5s ease both;}
       <div class="fline" style="margin-top:12px;color:rgba(250,248,244,0.4);font-size:11px;">Final score mapped 50–100 using power normalisation (exponent 0.6) to create meaningful spread between ranks.</div>
     </div>
   </div>
- 
+
   <!-- COMPARE SECTION — above rankings -->
   <div class="compare-section">
     <div class="compare-toggle-row">
@@ -418,7 +468,7 @@ fu{animation:fadeUp 0.5s ease both;}
     </div>
     <div id="compare-panel"></div>
   </div>
- 
+
   <!-- OPP RANKINGS -->
   <div class="sec-hdr fu fu2">
     <div class="sec-title">Full Opportunity Rankings</div>
@@ -431,7 +481,7 @@ fu{animation:fadeUp 0.5s ease both;}
       <div style="text-align:right">Helpful</div><div style="text-align:right">Priority</div>
     </div>
   </div>
- 
+
   <!-- BRAND + CAT -->
   <div class="two-col fu fu3">
     <div class="card">
@@ -442,10 +492,10 @@ fu{animation:fadeUp 0.5s ease both;}
     <div class="card">
       <div class="card-title">📦 Category Breakdown</div>
       <div class="card-sub">Unmet need density by product category</div>
-      <div class="cat-g" id="cat-grid"></div>
+      <div id="cat-grid"></div>
     </div>
   </div>
- 
+
   <!-- PLATFORM + QUALITY -->
   <div class="two-col fu fu3">
     <div class="card">
@@ -459,7 +509,7 @@ fu{animation:fadeUp 0.5s ease both;}
       <div id="quality"></div>
     </div>
   </div>
- 
+
   <!-- TREND RADAR -->
   <div class="trend-sec fu fu3">
     <div class="trend-eye">Analyst's Note — Early Signals</div>
@@ -472,11 +522,11 @@ fu{animation:fadeUp 0.5s ease both;}
     </div>
     <div class="trend-disc">⚠️ This section represents the analyst's independent market research, separate from the data analysis above. These are early-signal observations, not data-validated findings.</div>
   </div>
- 
+
 </div>
 <footer><div class="foot-in">NPD Intelligence · Mosaic Fellowship Challenge #8 · Live API data · 6,000 reviews · 15 Indian D2C brands · 2025</div></footer>
 </div>
- 
+
 <!-- MODAL -->
 <div id="mo">
   <div id="mo-bg" onclick="closeMo()"></div>
@@ -512,7 +562,7 @@ fu{animation:fadeUp 0.5s ease both;}
     </div>
   </div>
 </div>
- 
+
 <!-- CHAT -->
 <div id="chat-wrap">
   <div id="chat-win">
@@ -543,17 +593,17 @@ fu{animation:fadeUp 0.5s ease both;}
     <span class="fab-dot"></span>
   </button>
 </div>
- 
+
 <script>
 const OR_KEY = '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';
 const GROK_KEY = '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';
 const API = 'https://mosaicfellowship.in/api/data/npd/reviews';
- 
+
 let reviews=[], needsMap={}, brandsMap={}, catsMap={}, platsMap={};
 let scores=[], ctx='', chatOpen=false, chatHist=[];
 let compareMode=false, compareSelected=[], briefCache={};
 let activeCategory='All';
- 
+
 const LABELS={
   personalization_demand:'Personalisation Demand',allergen_labeling:'Allergen Labelling',
   skin_type_mismatch:'Skin Type Mismatch',result_tracking:'Result Tracking',
@@ -564,7 +614,7 @@ const LABELS={
   subscription_flexibility:'Subscription Flexibility',price_value_mismatch:'Price–Value Mismatch',
   dosage_confusion:'Dosage Confusion'
 };
- 
+
 const PNAMES={
   ingredient_transparency:'Transparent Formula Skincare Line',
   vegan_certification:'Certified Vegan Wellness Range',
@@ -582,7 +632,7 @@ const PNAMES={
   fragrance_sensitivity:'Fragrance-Free Sensitive Range',
   travel_size_demand:'Travel-Ready Mini Collection'
 };
- 
+
 const BRIEFS={
   ingredient_transparency:`<ul><li><strong>What to build:</strong> A skincare line where every ingredient is QR-scannable at purchase — customers see what's in the formula, why it's there, and third-party safety results instantly.</li><li><strong>Killer feature:</strong> "Nothing to Hide" label with a QR code linking to a full ingredient breakdown, sourcing details, and lab test certificates for each SKU.</li><li><strong>Why now:</strong> Indian consumers are becoming label-literate but brands are still hiding behind marketing claims — first-mover on transparency wins trust at scale.</li><li><strong>Attack vector:</strong> Target The Derma Co and Mamaearth customers who feel deceived by vague formulation claims.</li></ul>`,
   vegan_certification:`<ul><li><strong>What to build:</strong> A certified vegan wellness range where the certification isn't a side note — it's the entire brand identity and front-label promise.</li><li><strong>Killer feature:</strong> Every product links to a live auditor report; an allergen-free alternative is offered for every hero SKU, displayed side by side at purchase.</li><li><strong>Why now:</strong> "Contains gelatin capsules" buried in fine print is a trust-breaking moment — a verified clean label is an instant differentiator.</li><li><strong>Attack vector:</strong> MCaffeine and Plum customers who want plant-based but can't verify it.</li></ul>`,
@@ -600,7 +650,7 @@ const BRIEFS={
   fragrance_sensitivity:`<ul><li><strong>What to build:</strong> A fragrance-free wellness range — every product unscented by design and certified fragrance-free through a third party, not "lightly scented" or "naturally scented."</li><li><strong>Killer feature:</strong> A "Fragrance-Free Guarantee" badge backed by third-party certification — if a customer detects any fragrance, they get a full refund plus a ₹200 voucher for reporting it.</li><li><strong>Why now:</strong> "Unscented" products still contain masking fragrance across most Indian brands — genuine fragrance-free certification is a credible differentiator that resonates strongly with migraine and allergy sufferers.</li><li><strong>Attack vector:</strong> Bombay Shaving Co and Sugar Cosmetics customers who explicitly complain about overpowering artificial scents.</li></ul>`,
   travel_size_demand:`<ul><li><strong>What to build:</strong> A travel-ready mini collection — 50ml or under, TSA-compliant, sold individually and as curated travel kits for different categories (skincare, supplements, grooming).</li><li><strong>Killer feature:</strong> A "Try Before You Commit" subscription — customers get 3 minis per month for ₹299, select their favourite, get 20% off the full-size version automatically in month 2.</li><li><strong>Why now:</strong> Indian consumers travel frequently post-COVID but trusted D2C brand products don't exist in carry-on sizes — the mini becomes the trial vehicle that converts browsers into full-size loyalists.</li><li><strong>Attack vector:</strong> WOW Skin Science and Kapiva customers who've complained about products being too bulky for travel.</li></ul>`
 };
- 
+
 async function fetchAll(){
   let page=1,total=60;
   while(page<=total){
@@ -625,7 +675,7 @@ async function fetchAll(){
   buildCtx();
   render();
 }
- 
+
 function process(data){
   data.forEach(r=>{
     let needs=[];try{needs=JSON.parse(r.detected_unmet_needs||'[]');}catch(e){}
@@ -639,7 +689,7 @@ function process(data){
     platsMap[r.platform].n++;platsMap[r.platform].needs+=needs.length;platsMap[r.platform].rat+=r.rating;
   });
 }
- 
+
 function compute(){
   const entries=Object.entries(needsMap).map(([key,d])=>{
     const count=d.reviews.length,avgR=d.totRating/count,avgH=d.totHelp/count;
@@ -656,7 +706,7 @@ function compute(){
   entries.forEach(e=>{e.score=Math.round(50+50*Math.pow((e.raw-mnR)/rng,0.6));});
   scores=entries;
 }
- 
+
 function buildCtx(){
   const tn=scores.slice(0,10).map((n,i)=>
     `${i+1}. ${n.label}: ${n.count} mentions, avg ${n.avgR.toFixed(1)}★, score ${n.score}`
@@ -667,104 +717,82 @@ function buildCtx(){
   const ver=reviews.filter(r=>r.verified_purchase===1).length;
   const wn=reviews.filter(r=>{try{return JSON.parse(r.detected_unmet_needs||'[]').length>0;}catch(e){return false;}}).length;
   ctx=`You are a sharp product analyst with data from 6,000 Indian D2C competitor reviews (2025).
- 
+
 DATASET: ${reviews.length} reviews, ${Object.keys(brandsMap).length} brands, ${Math.round(ver/reviews.length*100)}% verified, ${Math.round(wn/reviews.length*100)}% have unmet needs.
- 
+
 TOP UNMET NEEDS (scored: frequency 40% + severity 35% + validation 25%):
 ${tn}
- 
+
 BRANDS (unmet mentions): ${tb}
 PLATFORMS: ${ps}
- 
+
 Answer in under 90 words. Use specific numbers. Be direct — you're briefing a CPO.`;
 }
- 
+
 function render(){
   document.getElementById('k-rev').textContent=reviews.length.toLocaleString();
   document.getElementById('k-br').textContent=Object.keys(brandsMap).length;
   document.getElementById('k-nd').textContent=scores.length;
   document.getElementById('k-top').textContent=scores[0]?.label||'—';
   document.getElementById('hdr-total').textContent=reviews.length.toLocaleString()+' Reviews';
-  renderCatFilter();
   renderTop3();renderInsights();renderFormExamples();renderGrid();
   renderBrands();renderCats();renderPlats();renderQuality();
   document.getElementById('app').classList.add('visible');
   const ld=document.getElementById('loader');ld.classList.add('hidden');
   setTimeout(()=>ld.style.display='none',700);
 }
- 
-function renderCatFilter(){
-  // Only show Mosaic Wellness relevant lenses — not every category
-  const filters=[
-    {id:'All', label:'All Categories'},
-    {id:"Men's Grooming", label:"Men's (Man Matters)"},
-    {id:'Skin Care', label:'Skin Care (Be Bodywise)'},
-    {id:'Wellness', label:'Wellness (Little Joys)'},
-    {id:'Supplements', label:'Supplements'},
-    {id:'Hair Care', label:'Hair Care'},
-  ];
-  const f=document.getElementById('cat-filter');
-  f.innerHTML=filters.map(c=>`
-    <button class="cf-btn ${c.id===activeCategory?'active':''}" onclick="setCat('${c.id}')">${c.label}</button>
-  `).join('');
-}
- 
-function setCat(cat){
-  activeCategory=cat;
-  renderCatFilter();
-  renderTop3();
-}
- 
+
+// Curated 5 products — data-backed but editorially chosen for relevance
+const CURATED_KEYS=[
+  'ingredient_transparency',  // #1 data
+  'result_tracking',          // Progress tracking supplement kit — your pick
+  'personalization_demand',   // Personalised skin & wellness
+  'skin_type_mismatch',       // Skin-type specific formula
+  'efficacy_timeline'         // Clinically-timed treatment
+];
+
 function renderTop3(){
   const g=document.getElementById('top3');g.innerHTML='';
-  const ranks=['#1 Priority — Build Now','#2 Priority — Pipeline','#3 Priority — Roadmap'];
- 
-  let displayItems;
- 
-  if(activeCategory==='All'){
-    displayItems=scores.slice(0,3).map(s=>({...s,displayCount:s.count}));
-  } else {
-    // For each need, count mentions only within this category
-    const catScores=scores.map(s=>{
-      const catRevs=s.data.reviews.filter(r=>r.competitor_category===activeCategory);
-      return{...s,displayCount:catRevs.length,catRevs};
-    }).filter(s=>s.displayCount>0);
-    // Re-sort by catRevs count for this category
-    catScores.sort((a,b)=>b.displayCount-a.displayCount);
-    displayItems=catScores.slice(0,3);
-  }
- 
-  if(displayItems.length===0){
-    g.innerHTML='<div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--ink3);font-size:14px;background:var(--paper2);border-radius:12px;border:1px solid var(--border);">No unmet need data available for this category.</div>';
-    return;
-  }
- 
-  displayItems.forEach((item,i)=>{
-    const revs=activeCategory==='All'?item.data.reviews:item.data.reviews.filter(r=>r.competitor_category===activeCategory);
-    const bc={};revs.forEach(r=>{bc[r.competitor_brand]=(bc[r.competitor_brand]||0)+1;});
-    const topB=Object.entries(bc).sort((a,b)=>b[1]-a[1])[0];
-    const pname=PNAMES[item.key]||item.label+' Product';
+  g.style.gridTemplateColumns='repeat(3,1fr)';
+
+  // Get the curated items in order, fall back to data order if key missing
+  let items=CURATED_KEYS.map(key=>scores.find(s=>s.key===key)).filter(Boolean);
+  if(items.length<3) items=[...items,...scores.filter(s=>!CURATED_KEYS.includes(s.key))].slice(0,5);
+
+  const ranks=['#1 — Build Now','#2 — High Priority','#3 — Strong Signal','#4 — Watch','#5 — Watch'];
+
+  items.forEach((item,i)=>{
     const brief=BRIEFS[item.key]||`<ul><li><strong>What to build:</strong> A product addressing the ${item.label.toLowerCase()} gap.</li><li><strong>Killer feature:</strong> Third-party verification at every touchpoint.</li><li><strong>Why now:</strong> First-mover on trust wins this category.</li></ul>`;
     const card=document.createElement('div');
     card.className='pcard';
+    // First 3 full size, last 2 more compact
+    if(i>=3) card.style.cssText='padding:20px;';
     card.innerHTML=`
       <div class="pcard-num">${i+1}</div>
-      <div class="pcard-rank">${ranks[i]}${activeCategory!=='All'?` · ${activeCategory}`:''}</div>
-      <div class="pcard-name">${pname}</div>
-      <div class="pcard-desc">Addresses the <strong>"${item.label}"</strong> gap — <strong>${item.displayCount}</strong> complaints${activeCategory!=='All'?' in '+activeCategory:' across all categories'}, avg ${item.avgR.toFixed(1)}★ satisfaction.</div>
+      <div class="pcard-rank">${ranks[i]}</div>
+      <div class="pcard-name">${PNAMES[item.key]||item.label}</div>
+      <div class="pcard-desc">Addresses the <strong>"${item.label}"</strong> gap — <strong>${item.count}</strong> reviews, avg ${item.avgR.toFixed(1)}★</div>
       <div class="pcard-stats">
-        <span class="pcard-stat">${item.displayCount} mentions</span>
+        <span class="pcard-stat">${item.count} mentions</span>
         <span class="pcard-stat">Score: ${item.score}</span>
         <span class="pcard-stat">${item.avgR.toFixed(1)}★ avg</span>
       </div>
-      <div class="pcard-brief">${brief}</div>
-      <div class="pcard-cta">→ Click for full analysis & sample reviews</div>
+      ${i<3?`<div class="pcard-brief">${brief}</div>`:''}
+      <div class="pcard-cta">→ Click for full breakdown</div>
     `;
     card.addEventListener('click',()=>openMo(item));
     g.appendChild(card);
   });
+
+  // Make last 2 span differently
+  g.style.gridTemplateColumns='repeat(3,1fr)';
+  const cards=g.querySelectorAll('.pcard');
+  if(cards.length>=4){
+    cards[3].style.gridColumn='1/span 2';
+    if(cards[4]) cards[4].style.gridColumn='3';
+  }
 }
- 
+
 function renderInsights(){
   const pe=Object.entries(platsMap).map(([p,d])=>({p,avg:d.rat/d.n})).sort((a,b)=>a.avg-b.avg);
   const wp=pe[0];
@@ -777,7 +805,7 @@ function renderInsights(){
     const cr=reviews.filter(r=>r.competitor_category===cat).length;
     return{cat,dens:needs/cr};
   }).sort((a,b)=>b.dens-a.dens)[0];
- 
+
   document.getElementById('insights').innerHTML=`
     <div class="ins-card">
       <div class="ins-tag">Platform Discovery</div>
@@ -796,16 +824,16 @@ function renderInsights(){
     </div>
   `;
 }
- 
+
 function renderFormExamples(){
   const top=scores[0];
   document.getElementById('eg1').textContent=`${top.count} reviews mention ${top.label.toLowerCase()}`;
   document.getElementById('eg2').textContent=`Avg ${top.avgR.toFixed(1)}★ = extreme frustration signal`;
   document.getElementById('eg3').textContent=`Avg ${Math.round(top.avgH)} helpful votes per complaint`;
 }
- 
+
 function getColor(s){if(s>=85)return'#c84b2f';if(s>=70)return'#e8a020';if(s>=55)return'#2a6e4e';return'#7a7568';}
- 
+
 function renderGrid(){
   const g=document.getElementById('opp-grid');
   const hdr=g.querySelector('.opp-hdr');g.innerHTML='';g.appendChild(hdr);
@@ -830,28 +858,53 @@ function renderGrid(){
     g.appendChild(row);
   });
 }
- 
+
 function renderBrands(){
   const s=Object.entries(brandsMap).sort((a,b)=>b[1]-a[1]);const mx=s[0]?.[1]||1;
   document.getElementById('brand-list').innerHTML=s.map(([b,c])=>`
-    <div class="brow"><div class="bname">${b}</div>
-    <div class="bbar-wrap"><div class="bbar" style="width:${Math.round((c/mx)*100)}%"></div></div>
-    <div class="bcount">${c}</div></div>`).join('');
+    <div class="chart-bar-wrap">
+      <div class="chart-bar-label">${b}</div>
+      <div class="chart-bar-track">
+        <div class="chart-bar-fill" style="width:0%" data-w="${Math.round((c/mx)*100)}"></div>
+      </div>
+      <div class="chart-bar-val">${c}</div>
+    </div>`).join('');
+  // Animate after render
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    document.querySelectorAll('#brand-list .chart-bar-fill').forEach(el=>{
+      el.style.width=el.dataset.w+'%';
+    });
+  }));
 }
- 
+
 function renderCats(){
-  const s=Object.entries(catsMap).sort((a,b)=>b[1]-a[1]);
-  document.getElementById('cat-grid').innerHTML=s.map(([c,n])=>`
-    <div class="cat-item"><div class="cat-name">${c}</div><div class="cat-count">${n} mentions</div></div>`).join('');
+  const s=Object.entries(catsMap).sort((a,b)=>b[1]-a[1]);const mx=s[0]?.[1]||1;
+  document.getElementById('cat-grid').innerHTML=`<div class="cat-chart">${
+    s.map(([cat,n])=>`
+      <div class="cat-chart-item">
+        <div class="cat-chart-top">
+          <div class="cat-chart-name">${cat}</div>
+          <div class="cat-chart-num">${n.toLocaleString()} mentions</div>
+        </div>
+        <div class="cat-chart-bar">
+          <div class="cat-chart-fill" style="width:0%" data-w="${Math.round((n/mx)*100)}"></div>
+        </div>
+      </div>`).join('')
+  }</div>`;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    document.querySelectorAll('#cat-grid .cat-chart-fill').forEach(el=>{
+      el.style.width=el.dataset.w+'%';
+    });
+  }));
 }
- 
+
 function renderPlats(){
   const s=Object.entries(platsMap).sort((a,b)=>b[1].needs-a[1].needs);
   document.getElementById('plat-list').innerHTML=s.map(([p,d])=>`
     <div class="plat-row"><div class="plat-name">${p}</div>
     <div class="plat-stats"><span>${d.n.toLocaleString()} reviews</span><span>${d.needs} needs</span><span>${(d.rat/d.n).toFixed(1)}★</span></div></div>`).join('');
 }
- 
+
 function renderQuality(){
   const ver=reviews.filter(r=>r.verified_purchase===1).length;
   const wn=reviews.filter(r=>{try{return JSON.parse(r.detected_unmet_needs||'[]').length>0;}catch(e){return false;}}).length;
@@ -875,7 +928,7 @@ function renderQuality(){
       </div>
     </div>`;
 }
- 
+
 /* MODAL */
 function openMo(item){
   document.getElementById('mo-title').textContent=item.label;
@@ -905,12 +958,12 @@ function openMo(item){
   document.getElementById('mo').classList.add('open');
   document.body.style.overflow='hidden';
 }
- 
+
 function closeMo(){
   document.getElementById('mo').classList.remove('open');
   document.body.style.overflow='';
 }
- 
+
 /* COMPARE */
 function toggleCompareMode(){
   compareMode=!compareMode;
@@ -921,6 +974,7 @@ function toggleCompareMode(){
   const banner=document.getElementById('compare-banner');
   banner.classList.toggle('show',compareMode);
   document.getElementById('compare-panel').innerHTML='';
+  document.getElementById('compare-panel').style.display='none';
   document.querySelectorAll('.opp-row').forEach(r=>r.classList.remove('compare-selected'));
   const hint=document.getElementById('compare-hint');
   hint.textContent=compareMode?'Click any two rows in the rankings above to select them':'Select any two rows above to compare them';
@@ -928,7 +982,7 @@ function toggleCompareMode(){
     document.getElementById('compare-toggle').scrollIntoView({behavior:'smooth',block:'center'});
   }
 }
- 
+
 function toggleCompareSelect(item,row){
   const idx=compareSelected.findIndex(s=>s.key===item.key);
   if(idx>=0){
@@ -942,13 +996,14 @@ function toggleCompareSelect(item,row){
   const c=document.getElementById('compare-count');
   c.textContent=compareSelected.length===0?'select 2 needs':compareSelected.length===1?`"${compareSelected[0].label}" selected — select 1 more`:`"${compareSelected[0].label}" vs "${compareSelected[1].label}"`;
 }
- 
+
 function runComparison(){
   if(compareSelected.length<2){alert('Please select exactly 2 needs from the rankings.');return;}
   const [a,b]=compareSelected;
   const aWins=(metric)=>a[metric]>b[metric];
   const bWins=(metric)=>b[metric]>a[metric];
   const panel=document.getElementById('compare-panel');
+  panel.style.display='block';
   panel.innerHTML=`
     <div class="sec-hdr" style="margin-top:20px"><div class="sec-title">Head-to-Head Comparison</div><div class="sec-sub">Which gap is the bigger opportunity?</div></div>
     <div class="compare-grid">
@@ -993,17 +1048,17 @@ function runComparison(){
   `;
   panel.scrollIntoView({behavior:'smooth',block:'start'});
 }
- 
+
 /* CHAT — OpenRouter */
 function toggleChat(){
   chatOpen=!chatOpen;
   document.getElementById('chat-win').classList.toggle('open',chatOpen);
   if(chatOpen)setTimeout(()=>document.getElementById('cinput').focus(),100);
 }
- 
+
 function chatKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}}
 function useSug(btn){document.getElementById('cinput').value=btn.textContent;document.getElementById('cw-sugs').style.display='none';sendChat();}
- 
+
 function sendChat(){
   const inp=document.getElementById('cinput');
   const msg=inp.value.trim();if(!msg)return;
@@ -1015,22 +1070,22 @@ function sendChat(){
     addMsg('ai',reply);
   },400);
 }
- 
+
 function intelligentAnswer(msg){
   const q=msg.toLowerCase().trim();
- 
+
   // BUILD / WHAT TO BUILD
   if(q.match(/build|launch|create|make|product|first|priority|start|focus/)){
     const top3=scores.slice(0,3);
     return`Based on 6,000 reviews, the #1 opportunity is <strong>${top3[0].label}</strong> — ${top3[0].count} mentions, avg ${top3[0].avgR.toFixed(1)}★, score ${top3[0].score}/100. The data points to a single core thesis: Indian D2C consumers are not underserved by products, they are underserved by trust, clarity, and control. Build something that solves all three at once.`;
   }
- 
+
   // BRANDS
   if(q.match(/brand|worst|who|which company|competitor|mamaearth|derma|mcaffeine|wow|plum/)){
     const top5=Object.entries(brandsMap).sort((a,b)=>b[1]-a[1]).slice(0,5);
     return`Top brands by unmet need volume: ${top5.map(([b,c],i)=>`${i+1}. ${b} (${c} complaints)`).join(', ')}. The Derma Co leads at ${top5[0][1]} mentions — meaning their customers are the most frustrated and most likely to switch to a credible alternative.`;
   }
- 
+
   // CATEGORY SPECIFIC
   if(q.match(/men|man matters|grooming|beardo|bombay shaving/)){
     const mgNeeds=scores.map(s=>{
@@ -1039,7 +1094,7 @@ function intelligentAnswer(msg){
     }).filter(s=>s.count>0).sort((a,b)=>b.count-a.count).slice(0,4);
     return`Men's Grooming top gaps: ${mgNeeds.map((s,i)=>`${i+1}. ${s.label} (${s.count} mentions, ${s.avgR.toFixed(1)}★)`).join(', ')}. For Man Matters positioning: lead with allergen safety and combination guidance — these are the clearest pain points where customers feel unsupported.`;
   }
- 
+
   if(q.match(/skin care|skincare|women|be bodywise|bodywise|face|serum/)){
     const skNeeds=scores.map(s=>{
       const r=s.data.reviews.filter(r=>r.competitor_category==="Skin Care");
@@ -1047,7 +1102,7 @@ function intelligentAnswer(msg){
     }).filter(s=>s.count>0).sort((a,b)=>b.count-a.count).slice(0,4);
     return`Skin Care has ${catsMap['Skin Care']||0} total unmet need mentions — the highest of any category. Top gaps: ${skNeeds.map((s,i)=>`${i+1}. ${s.label} (${s.count})`).join(', ')}. For Be Bodywise: skin type mismatch and ingredient transparency are the most urgent — customers are buying the wrong products and don't know it until they've already used them.`;
   }
- 
+
   if(q.match(/supplement|protein|vitamin|health|muscle|oziva|healthkart|muscleblaze/)){
     const spNeeds=scores.map(s=>{
       const r=s.data.reviews.filter(r=>r.competitor_category==="Supplements");
@@ -1055,7 +1110,7 @@ function intelligentAnswer(msg){
     }).filter(s=>s.count>0).sort((a,b)=>b.count-a.count).slice(0,4);
     return`Supplements top gaps: ${spNeeds.map((s,i)=>`${i+1}. ${s.label} (${s.count} mentions)`).join(', ')}. The big insight: supplement buyers are not confused about what to buy — they are overwhelmed by lack of proof. Efficacy timelines and dosage clarity are the two gaps that would move conversion most.`;
   }
- 
+
   if(q.match(/wellness|ayurved|kapiva|little joy/)){
     const wlNeeds=scores.map(s=>{
       const r=s.data.reviews.filter(r=>r.competitor_category==="Wellness");
@@ -1063,70 +1118,70 @@ function intelligentAnswer(msg){
     }).filter(s=>s.count>0).sort((a,b)=>b.count-a.count).slice(0,3);
     return`Wellness category top gaps: ${wlNeeds.map((s,i)=>`${i+1}. ${s.label} (${s.count} mentions)`).join(', ')}. Kapiva has ${brandsMap['Kapiva']||0} unmet need mentions — high for its size. Wellness customers specifically demand result tracking and efficacy timelines more than any other category.`;
   }
- 
+
   // PLATFORM
   if(q.match(/platform|amazon|nykaa|flipkart|website|where/)){
     const pe=Object.entries(platsMap).map(([p,d])=>({p,avg:(d.rat/d.n).toFixed(1),n:d.n,needs:d.needs})).sort((a,b)=>a.avg-b.avg);
     return`Platform frustration levels (lower rating = more frustrated): ${pe.map(p=>`${p.p} — ${p.n} reviews, avg ${p.avg}★, ${p.needs} unmet needs`).join(' | ')}. Brand Website customers are most frustrated despite presumably being the most loyal — this suggests even engaged buyers are let down post-purchase.`;
   }
- 
+
   // TRUST / TRANSPARENCY
   if(q.match(/trust|transparent|ingredient|label|credib|honest/)){
     const it=scores.find(s=>s.key==='ingredient_transparency');
     return`Ingredient Transparency is the #1 ranked gap — ${it?.count||611} mentions, avg ${it?.avgR.toFixed(1)||2.1}★, score ${it?.score||100}/100. The pattern across all 15 needs points to a single structural issue: brands are optimizing for acquisition while customers are optimizing for risk reduction. The trust gap is not a product problem — it's a credibility architecture problem.`;
   }
- 
+
   // VEGAN / SUSTAINABILITY
   if(q.match(/vegan|cruelty|sustainable|eco|green|packaging|plastic/)){
     const vc=scores.find(s=>s.key==='vegan_certification');
     const ps=scores.find(s=>s.key==='packaging_sustainability');
     return`Two sustainability signals: Vegan Certification (${vc?.count||579} mentions, score ${vc?.score||97}) and Packaging Sustainability (${ps?.count||527} mentions, score ${ps?.score||77}). Combined, these represent a clear conscious-consumer shift — customers want brands that align with their values, not just their skin type. This is especially strong among 18-28 female buyers in metro cities.`;
   }
- 
+
   // PERSONALISATION
   if(q.match(/personaliz|personal|custom|quiz|skin type|formul/)){
     const pd=scores.find(s=>s.key==='personalization_demand');
     const st=scores.find(s=>s.key==='skin_type_mismatch');
     return`Personalisation Demand (${pd?.count||598} mentions) + Skin Type Mismatch (${st?.count||586} mentions) together signal the same problem: Indian D2C brands sell generic products to specific people. This is the Function of Beauty opportunity — a quiz-first, custom-formulation brand that makes "made for you" real, not just marketing language.`;
   }
- 
+
   // RESULT / TRACKING
   if(q.match(/result|track|progress|efficacy|timeline|work|proof/)){
     const rt=scores.find(s=>s.key==='result_tracking');
     const et=scores.find(s=>s.key==='efficacy_timeline');
     return`Result Tracking (${rt?.count||585} mentions) and Efficacy Timeline (${et?.count||564} mentions) are deeply connected — customers want to know when to expect results and then see them happen. The insight: consumers are shifting from product buyers to outcome seekers. The brand that provides outcome infrastructure (not just outcome claims) wins retention.`;
   }
- 
+
   // SUBSCRIPTION
   if(q.match(/subscri|auto.renewal|cancel|pause|flexible/)){
     const sf=scores.find(s=>s.key==='subscription_flexibility');
     return`Subscription Flexibility has ${sf?.count||588} mentions with avg ${sf?.avgR.toFixed(1)||2.2}★ — meaning it generates both high volume and high anger. Indian D2C brands copied Western subscription models without adapting to a market with lower institutional trust. Customers feel trapped, not valued. The fix: make exit as easy as entry, and the brand paradoxically gets better retention.`;
   }
- 
+
   // DATA / NUMBERS GENERAL
   if(q.match(/how many|total|number|count|stat|data|review/)){
     const verified=reviews.filter(r=>r.verified_purchase===1).length;
     const withNeeds=reviews.filter(r=>{try{return JSON.parse(r.detected_unmet_needs||'[]').length>0;}catch(e){return false;}}).length;
     return`Dataset: ${reviews.length.toLocaleString()} reviews across ${Object.keys(brandsMap).length} brands, ${Object.keys(catsMap).length} categories, 4 platforms. ${Math.round(verified/reviews.length*100)}% verified purchases. ${Math.round(withNeeds/reviews.length*100)}% of reviews flag at least one unmet need. Total unmet need signals: ~${Object.values(needsMap).reduce((s,d)=>s+d.reviews.length,0).toLocaleString()} across 15 categories.`;
   }
- 
+
   // PRICING / VALUE
   if(q.match(/price|cost|value|expensive|cheap|afford/)){
     const pv=scores.find(s=>s.key==='price_value_mismatch');
     return`Price-Value Mismatch has ${pv?.count||572} mentions, score ${pv?.score||87}/100. Customers don't mind paying premium — they mind paying premium for products that feel generic. The key insight: price sensitivity in this dataset is not about rupees, it's about perceived value credibility. A ₹1,500 serum with a QR-scannable ingredient breakdown feels better value than a ₹800 one with vague claims.`;
   }
- 
+
   // GLOBAL / INSPIRATION
   if(q.match(/global|international|korea|us|western|inspiration|similar|like what/)){
     return`5 global models that map directly to this dataset: 1. CeraVe → India needs a science-first, dermatologist-backed mass brand. 2. Function of Beauty → quiz-based personalization. 3. Korean skin cycling → sell routines not products (solves combination_guidance). 4. Hims & Hers → tele-consultation + delivery for skin/hair. 5. InsideTracker → outcome tracking infrastructure (solves result_tracking). All five address the core thesis: consumers want outcomes, not just products.`;
   }
- 
+
   // DEFAULT — always give real data
   const top=scores[0];
   const branded=Object.entries(brandsMap).sort((a,b)=>b[1]-a[1])[0];
   return`From 6,000 reviews: the biggest gap is <strong>${top.label}</strong> (${top.count} mentions, ${top.avgR.toFixed(1)}★ avg, score ${top.score}/100). The brand with the most complaints is ${branded[0]} (${branded[1]} unmet need mentions). Try asking: "What should we build for men's grooming?", "Which platform is most frustrated?", or "What does the trust problem look like in the data?"`;
 }
- 
+
 function smartFallback(msg){
   const q=msg.toLowerCase();
   if(q.includes('build first')||q.includes('top')||q.includes('priority')||q.includes('what should')){
@@ -1146,7 +1201,7 @@ function smartFallback(msg){
   const top3=scores.slice(0,3).map((s,i)=>`${i+1}. ${s.label} (${s.count} mentions, score ${s.score})`).join(', ');
   return`Top 3 opportunities from 6,000 reviews: ${top3}. Try asking about specific brands, platforms, or categories like "What are the Skin Care gaps?" or "Which brand is worst?"`;
 }
- 
+
 function addMsg(role,text,id=''){
   const msgs=document.getElementById('cw-msgs');
   const div=document.createElement('div');div.className=`cmsg ${role}`;if(id)div.id=id;
@@ -1159,7 +1214,7 @@ function addMsg(role,text,id=''){
   msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
 }
 function removeTyping(){const t=document.getElementById('typing-msg');if(t)t.remove();}
- 
+
 fetchAll();
 </script>
 </body>
